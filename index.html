@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BJY 18650 Lithium-ion Battery</title>
+<title>DZ 18650 Lithium-ion Battery</title>
 <style>
   /* ================= 基础设置 ================= */
   * {
@@ -71,7 +71,7 @@
   }
   .text-muted { color: #777; font-size: 14px; }
   .row { display: flex; margin-bottom: 8px; font-size: 14px; }
-  .col-label { width: 100px; color: #777; flex-shrink: 0; }
+  .col-label { width: 120px; color: #777; flex-shrink: 0; }
   .col-value { color: #333; word-break: break-all; }
 
   /* ================= 顶部蓝色标题 ================= */
@@ -89,14 +89,23 @@
   .table-container { overflow-x: auto; margin-top: 10px; }
   table { width: 100%; border-collapse: collapse; font-size: 12px; text-align: center; }
   
-  .table-purple { background-color: #f4eaff; color: #444; border-radius: 8px; overflow: hidden; }
-  .table-purple th, .table-purple td { border: 1px solid #e0cef5; padding: 10px 5px; }
-  .table-purple th { background-color: #e8d8fa; font-weight: normal; }
-
   .table-blue { background-color: #eaf2fb; color: #444; border-radius: 8px; overflow: hidden; }
   .table-blue th { background-color: #b3cef0; padding: 12px 10px; border: 1px solid #a3c2e8; font-weight: normal; }
   .table-blue td { padding: 10px; border-bottom: 1px solid #d0e1f5; border-left: 1px solid #d0e1f5; border-right: 1px solid #d0e1f5; }
-  .table-blue td:last-child { text-align: center; }
+  .table-blue td:last-child { text-align: center; font-weight: 500; color: #5b4fc8; }
+
+  /* ================= 新增：有害物质卡片样式 ================= */
+  .haz-grid { display: flex; gap: 10px; margin-bottom: 20px; }
+  .haz-item { flex: 1; background: #f4f6fc; border-radius: 8px; padding: 15px 10px; text-align: center; }
+  .haz-symbol { font-size: 18px; font-weight: 700; color: #7b8df4; margin-bottom: 5px; }
+  .haz-name { font-size: 12px; color: #666; margin-bottom: 5px; }
+  .haz-status { font-size: 12px; color: #4a6ad9; font-weight: 600; }
+  
+  .substance-title { font-size: 14px; color: #555; margin-bottom: 10px; font-weight: 600; }
+  .substance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+  .substance-item { background: #fdf2f2; border-radius: 8px; padding: 15px 10px; text-align: center; color: #b33e3e; }
+  .substance-name { font-size: 13px; font-weight: 600; margin-bottom: 4px; line-height: 1.3; }
+  .substance-formula { font-size: 11px; color: #a55; }
 
   /* ================= 灭火剂胶囊 ================= */
   .agent-row { display: flex; gap: 20px; margin-top: 10px; }
@@ -196,27 +205,29 @@
 
   <!-- 1. 顶部标题 -->
   <div class="header-banner">
-    <h1 data-i18n="header_title">BJY 18650</h1>
+    <h1 data-i18n="header_title">18650</h1>
     <p data-i18n="header_subtitle">Lithium-ion Battery</p>
   </div>
 
-  <!-- 2. 制造商信息 -->
+  <!-- 2. 制造商信息 (根据新截图更新) -->
   <div class="card">
     <div class="section-title" data-i18n="manu_title">Manufacturer</div>
     <div style="font-weight: 600; font-size: 15px; margin-bottom: 5px;" data-i18n="manu_name">Shenzhen Da zheng Energy Co., LTD.</div>
     <div class="text-muted" style="margin-bottom: 10px;" data-i18n="manu_address">
       509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian community, Longgang Street, Longgang District, Shenzhen City, Guangdong Province, China.
     </div>
+    <div class="row"><div class="col-label" data-i18n="lbl_phone">Phone:</div><div class="col-value">+86 15112356663</div></div>
     <div class="row"><div class="col-label" data-i18n="lbl_mobile">Mobile:</div><div class="col-value">+86 15112356663</div></div>
     <div class="row"><div class="col-label" data-i18n="lbl_contact">Contact:</div><div class="col-value" data-i18n="manu_contact_name">Cen Yingshun</div></div>
     <div class="row"><div class="col-label" data-i18n="lbl_email">Email:</div><div class="col-value">41536882@qq.com</div></div>
     <div class="row"><div class="col-label" data-i18n="lbl_website">Website:</div><div class="col-value">https://dazhengnengyuan.1688.com</div></div>
   </div>
 
-  <!-- 3. 电池 ID 和制造信息 -->
+  <!-- 3. 电池 ID 和制造信息 (根据新截图更新) -->
   <div class="card">
     <div class="section-title" data-i18n="batt_id_title">Battery ID</div>
     <div class="row"><div class="col-label" data-i18n="lbl_product">Product</div><div class="col-value" data-i18n="val_product">Lithium-ion Battery</div></div>
+    <div class="row"><div class="col-label" data-i18n="lbl_batt_cat">Battery category</div><div class="col-value" data-i18n="val_batt_cat">Portable battery</div></div>
     <div class="row"><div class="col-label" data-i18n="lbl_model">Model</div><div class="col-value">18650</div></div>
     <div class="row"><div class="col-label" data-i18n="lbl_batch">Batch</div><div class="col-value">2611-18650-1800-1</div></div>
     
@@ -225,10 +236,9 @@
     <div class="section-title" data-i18n="manu_fac_title">Manufacturing</div>
     <div class="row"><div class="col-label" data-i18n="lbl_place">Place</div><div class="col-value" data-i18n="val_place">Shenzhen, Guangdong, China</div></div>
     <div class="row"><div class="col-label" data-i18n="lbl_date">Date</div><div class="col-value" data-i18n="val_date">November 2026</div></div>
-  </div>
 
-  <!-- 4. 规格参数 -->
-  <div class="card">
+    <div style="height: 1px; background: #eee; margin: 15px 0;"></div>
+    
     <div class="section-title" data-i18n="spec_title">Specifications</div>
     <div class="row"><div class="col-label" data-i18n="lbl_weight">Weight</div><div class="col-value">43.52 g</div></div>
     <div class="row"><div class="col-label" data-i18n="lbl_voltage">Voltage</div><div class="col-value">3.7V</div></div>
@@ -236,52 +246,52 @@
     <div class="row"><div class="col-label" data-i18n="lbl_chem">Chemistry</div><div class="col-value" data-i18n="val_chem">Li-ion LCO</div></div>
   </div>
 
-  <!-- 5. 有害物质表格 (使用新版卡片布局) -->
+  <!-- 4. 有害物质 & 包含化学物质 (根据新截图全新排版) -->
   <div class="card">
     <div class="section-title" data-i18n="hazard_title">Hazardous Substances</div>
     
     <!-- Hg Cd Pb 卡片 -->
-    <div style="display:flex; gap:10px; margin-bottom:20px;">
-      <div style="flex:1; background:#f4f6fc; border-radius:8px; padding:15px 10px; text-align:center;">
-        <div style="font-size:18px; font-weight:700; color:#7b8df4; margin-bottom:5px;">Hg</div>
-        <div style="font-size:12px; color:#666; margin-bottom:5px;" data-i18n="tbl_mer">Mercury</div>
-        <div style="font-size:12px; color:#4a6ad9; font-weight:600;" data-i18n="val_nd">Not Detected</div>
+    <div class="haz-grid">
+      <div class="haz-item">
+        <div class="haz-symbol">Hg</div>
+        <div class="haz-name" data-i18n="tbl_mer">Mercury</div>
+        <div class="haz-status" data-i18n="val_nd">Not Detected</div>
       </div>
-      <div style="flex:1; background:#f4f6fc; border-radius:8px; padding:15px 10px; text-align:center;">
-        <div style="font-size:18px; font-weight:700; color:#7b8df4; margin-bottom:5px;">Cd</div>
-        <div style="font-size:12px; color:#666; margin-bottom:5px;" data-i18n="tbl_cad">Cadmium</div>
-        <div style="font-size:12px; color:#4a6ad9; font-weight:600;" data-i18n="val_nd">Not Detected</div>
+      <div class="haz-item">
+        <div class="haz-symbol">Cd</div>
+        <div class="haz-name" data-i18n="tbl_cad">Cadmium</div>
+        <div class="haz-status" data-i18n="val_nd">Not Detected</div>
       </div>
-      <div style="flex:1; background:#f4f6fc; border-radius:8px; padding:15px 10px; text-align:center;">
-        <div style="font-size:18px; font-weight:700; color:#7b8df4; margin-bottom:5px;">Pb</div>
-        <div style="font-size:12px; color:#666; margin-bottom:5px;" data-i18n="tbl_lead">Lead</div>
-        <div style="font-size:12px; color:#4a6ad9; font-weight:600;" data-i18n="val_nd">Not Detected</div>
+      <div class="haz-item">
+        <div class="haz-symbol">Pb</div>
+        <div class="haz-name" data-i18n="tbl_lead">Lead</div>
+        <div class="haz-status" data-i18n="val_nd">Not Detected</div>
       </div>
     </div>
 
     <!-- 包含的化学物质 -->
-    <div style="font-size:14px; color:#555; margin-bottom:10px; font-weight:600;" data-i18n="haz_contains_title">Contains the following hazardous substances</div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-      <div style="background:#fdf2f2; border-radius:8px; padding:15px 10px; text-align:center; color:#b33e3e;">
-        <div style="font-size:13px; font-weight:600; margin-bottom:4px; line-height:1.3;" data-i18n="sub_lco">Lithium Cobalt Oxide</div>
-        <div style="font-size:11px; color:#a55;">LiCoO<sub>2</sub></div>
+    <div class="substance-title" data-i18n="haz_contains_title">Contains the following hazardous substances</div>
+    <div class="substance-grid">
+      <div class="substance-item">
+        <div class="substance-name" data-i18n="sub_lco">Lithium Cobalt Oxide</div>
+        <div class="substance-formula">LiCoO<sub>2</sub></div>
       </div>
-      <div style="background:#fdf2f2; border-radius:8px; padding:15px 10px; text-align:center; color:#b33e3e;">
-        <div style="font-size:13px; font-weight:600; margin-bottom:4px; line-height:1.3;" data-i18n="sub_lipf6">Lithium Hexafluorophosphate</div>
-        <div style="font-size:11px; color:#a55;">LiPF<sub>6</sub></div>
+      <div class="substance-item">
+        <div class="substance-name" data-i18n="sub_lipf6">Lithium Hexafluorophosphate</div>
+        <div class="substance-formula">LiPF<sub>6</sub></div>
       </div>
-      <div style="background:#fdf2f2; border-radius:8px; padding:15px 10px; text-align:center; color:#b33e3e;">
-        <div style="font-size:13px; font-weight:600; margin-bottom:4px; line-height:1.3;" data-i18n="sub_ec">Ethylene Carbonate</div>
-        <div style="font-size:11px; color:#a55;">C<sub>3</sub>H<sub>4</sub>O<sub>3</sub></div>
+      <div class="substance-item">
+        <div class="substance-name" data-i18n="sub_ec">Ethylene Carbonate</div>
+        <div class="substance-formula">C<sub>3</sub>H<sub>4</sub>O<sub>3</sub></div>
       </div>
-      <div style="background:#fdf2f2; border-radius:8px; padding:15px 10px; text-align:center; color:#b33e3e;">
-        <div style="font-size:13px; font-weight:600; margin-bottom:4px; line-height:1.3;" data-i18n="sub_dmc">Dimethyl Carbonate</div>
-        <div style="font-size:11px; color:#a55;">C<sub>3</sub>H<sub>6</sub>O<sub>3</sub></div>
+      <div class="substance-item">
+        <div class="substance-name" data-i18n="sub_dmc">Dimethyl Carbonate</div>
+        <div class="substance-formula">C<sub>3</sub>H<sub>6</sub>O<sub>3</sub></div>
       </div>
     </div>
   </div>
 
-  <!-- 6. 灭火剂 -->
+  <!-- 5. 灭火剂 -->
   <div class="card">
     <div class="section-title" data-i18n="ext_title">Extinguishing Agents</div>
     <div class="agent-row">
@@ -290,7 +300,7 @@
     </div>
   </div>
 
-  <!-- 7. 化学成分表格 -->
+  <!-- 6. 化学成分表格 (根据新截图更新数据) -->
   <div class="card">
     <div class="section-title" style="line-height: 1.3; margin-bottom: 15px;" data-i18n="chem_title">Chemical Composition (Critical Raw Materials >0.1%)</div>
     <div class="table-container">
@@ -309,7 +319,7 @@
 
   <!-- ================= 折叠卡片 ================= -->
   
-  <!-- 1. 绿色卡片 -->
+  <!-- 1. 绿色卡片 (长文本折叠) -->
   <details class="card card-green">
     <summary class="card-header">
       <span class="arrow-icon"></span>
@@ -391,7 +401,7 @@
       <defs><clipPath id="clip-0"><path clip-rule="nonzero" d="M 0.808594 0.0585938 L 191.054688 0.0585938 L 191.054688 200.042969 L 0.808594 200.042969 Z M 0.808594 0.0585938 "/></clipPath><clipPath id="clip-1"><rect x="0" y="0" width="192" height="201"/></clipPath><g id="source-5" clip-path="url(#clip-1)"><g clip-path="url(#clip-0)"><path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 75.617188 162.894531 C 76.109375 162.734375 76.453125 162.523438 76.800781 162.523438 C 87.910156 162.507812 99.019531 162.457031 110.128906 162.601562 C 111.222656 162.617188 112.546875 163.625 113.351562 164.535156 C 121.042969 173.234375 135.476562 170.570312 139.289062 159.648438 C 139.925781 157.824219 140.261719 155.890625 140.9375 153.21875 C 151.527344 163.40625 161.660156 173.15625 171.582031 182.703125 C 172.371094 179.785156 171.238281 177.21875 168.652344 174.652344 C 156.789062 162.859375 145.15625 150.839844 133.359375 138.980469 C 131.640625 137.246094 130.949219 135.59375 131.167969 133.066406 C 132.734375 114.789062 134.160156 96.492188 135.539062 78.195312 C 136.003906 72.050781 135.878906 72.039062 142.203125 72.03125 C 143.453125 72.03125 144.707031 71.941406 145.949219 72.046875 C 148.265625 72.238281 148.984375 71.1875 148.933594 68.960938 C 148.835938 64.59375 149.089844 60.214844 148.929688 55.851562 C 148.832031 53.242188 149.800781 51.464844 151.628906 49.679688 C 157.519531 43.925781 163.15625 37.90625 169.0625 32.167969 C 171.851562 29.460938 171.246094 26.613281 169.980469 23.125 C 168.53125 24.097656 167.730469 25.5625 166.605469 26.710938 C 158.753906 34.734375 150.871094 42.730469 142.890625 50.625 C 141.875 51.628906 140.234375 51.992188 138.453125 52.863281 L 138.453125 46.382812 C 139.835938 46.292969 141.226562 46.617188 141.996094 46.070312 C 143.914062 44.710938 146.480469 43.21875 147.03125 41.28125 C 147.535156 39.515625 146.308594 36.28125 144.777344 35.183594 C 143.121094 33.992188 140.230469 34.519531 137.878906 34.300781 C 136.695312 34.1875 135.074219 34.539062 134.398438 33.894531 C 130.183594 29.875 125.039062 27.863281 119.617188 26.183594 C 117.050781 25.390625 113.308594 26.429688 112.5 22.261719 C 112.457031 22.023438 111.636719 21.800781 111.175781 21.796875 C 102.972656 21.769531 94.769531 21.777344 87.492188 21.777344 C 86.066406 23.410156 85.3125 25.105469 84.328125 25.253906 C 80.433594 25.835938 76.464844 25.9375 72.246094 26.234375 C 72.304688 23.210938 71.175781 22.1875 68.414062 22.265625 C 65.652344 22.34375 65.824219 23.878906 65.296875 25.773438 C 64.855469 27.351562 63.328125 28.714844 62.078125 29.964844 C 58.90625 33.128906 53.046875 33.558594 52.492188 39.445312 C 52.464844 39.746094 51.273438 39.816406 50.964844 40.242188 C 50.253906 41.21875 49.226562 42.398438 49.324219 43.402344 C 49.410156 44.339844 50.742188 45.195312 51.605469 46.003906 C 52.183594 46.546875 53.40625 46.871094 53.476562 47.410156 C 53.964844 51.109375 54.226562 54.835938 54.609375 59.125 C 41.921875 46.910156 29.886719 35.324219 18.003906 23.890625 C 17.179688 27.46875 18.273438 30.507812 21.328125 33.433594 C 30.253906 41.980469 38.65625 51.074219 47.691406 59.5 C 53.035156 64.484375 56.238281 69.664062 56.679688 77.351562 C 57.691406 94.910156 59.804688 112.402344 61.226562 129.941406 C 61.371094 131.71875 60.308594 134.078125 59.023438 135.402344 C 46.25 148.570312 33.359375 161.625 20.382812 174.59375 C 17.890625 177.078125 17.65625 179.597656 19.003906 183.832031 C 33.765625 169.007812 48 154.71875 62.597656 140.058594 C 62.847656 143.160156 62.707031 145.832031 63.347656 148.304688 C 64.644531 153.34375 61.386719 159.542969 67.140625 163.507812 C 67.511719 163.761719 67.214844 164.941406 67.285156 165.683594 C 67.375 166.632812 67.523438 167.570312 67.644531 168.527344 L 75.152344 168.527344 C 75.316406 166.519531 75.46875 164.703125 75.617188 162.894531 M 191.054688 200.039062 L 0.808594 200.039062 L 0.808594 0.0585938 L 191.054688 0.0585938 Z M 191.054688 200.039062 "/></g><path fill-rule="nonzero" fill="rgb(13.725281%, 12.156677%, 12.548828%)" fill-opacity="1" d="M 107.511719 30.222656 C 106.558594 27.433594 104.808594 27.109375 94.152344 27.792969 C 93.117188 27.859375 92.132812 28.6875 91.125 29.160156 C 91.292969 29.515625 91.460938 29.871094 91.625 30.222656 Z M 144.703125 67.90625 L 144.703125 57.300781 C 138.324219 61.769531 136.335938 64.429688 136.753906 67.90625 Z M 125.347656 164.8125 C 131.027344 164.738281 135.542969 160.210938 135.535156 154.597656 C 135.53125 148.878906 131.042969 144.320312 125.429688 144.324219 C 119.308594 144.328125 114.667969 148.945312 114.789062 154.902344 C 114.90625 160.359375 119.730469 164.890625 125.347656 164.8125 M 113.355469 31.585938 C 112.148438 32.390625 110.957031 33.851562 109.726562 33.890625 C 102.878906 34.097656 96.015625 33.984375 89.160156 33.902344 C 88.40625 33.890625 87.644531 33.394531 86.902344 33.074219 C 85.714844 32.558594 84.566406 31.621094 83.359375 31.546875 C 81.269531 31.421875 79.148438 31.96875 77.039062 31.953125 C 74.230469 31.9375 71.808594 32.21875 71.808594 35.945312 C 70.042969 35.945312 68.335938 36.421875 67.117188 35.851562 C 64.386719 34.574219 62.613281 35.921875 60.878906 37.507812 C 60.035156 38.285156 59.507812 39.40625 58.835938 40.371094 C 60.011719 40.773438 61.1875 41.523438 62.367188 41.527344 C 84.183594 41.578125 106 41.546875 127.816406 41.515625 C 129.117188 41.515625 130.417969 41.378906 132.476562 41.265625 C 127.621094 33.480469 120.324219 32.214844 113.355469 31.585938 M 66.882812 125.03125 C 74.617188 118.160156 82.769531 110.921875 90.203125 104.324219 C 80.457031 94.335938 71.367188 85.019531 62.042969 75.464844 C 63.714844 92.605469 65.371094 109.546875 66.882812 125.03125 M 98.640625 103.570312 C 107.296875 112.523438 116.023438 121.546875 125.496094 131.339844 C 127.007812 111.097656 128.429688 92.09375 129.886719 72.644531 C 119.207031 83.214844 109.09375 93.222656 98.640625 103.570312 M 94.769531 107.824219 C 94.230469 108.117188 93.84375 108.230469 93.59375 108.480469 C 85.511719 116.605469 77.429688 124.734375 69.390625 132.90625 C 68.824219 133.480469 68.222656 134.40625 68.261719 135.136719 C 68.675781 142.171875 69.21875 149.199219 69.746094 156.488281 C 82.433594 156.488281 94.628906 156.546875 106.8125 156.359375 C 107.640625 156.347656 109.003906 154.570312 109.164062 153.476562 C 110.335938 145.5 114.773438 140.675781 122.558594 138.816406 C 123.308594 138.636719 124.039062 138.371094 124.800781 138.140625 C 114.699219 127.941406 104.820312 117.96875 94.769531 107.824219 M 93.683594 98.921875 C 103.824219 89.132812 113.3125 79.5625 123.289062 70.535156 C 127.753906 66.488281 130.042969 62.234375 129.175781 56.261719 C 129.007812 55.113281 129.207031 52.980469 129.71875 52.8125 C 134.945312 51.132812 131.410156 47.261719 132.664062 44.277344 L 59.140625 44.277344 C 59.820312 51.445312 60.378906 58.359375 61.222656 65.238281 C 61.363281 66.414062 62.582031 67.566406 63.511719 68.519531 C 68.21875 73.339844 72.992188 78.085938 77.742188 82.863281 C 83.175781 88.332031 88.605469 93.804688 93.683594 98.921875 M 75.617188 162.894531 C 75.464844 164.703125 75.316406 166.523438 75.148438 168.527344 L 67.644531 168.527344 C 67.519531 167.574219 67.375 166.632812 67.285156 165.683594 C 67.214844 164.941406 67.511719 163.761719 67.140625 163.507812 C 61.386719 159.542969 64.644531 153.347656 63.347656 148.304688 C 62.710938 145.832031 62.851562 143.160156 62.597656 140.058594 C 48 154.71875 33.765625 169.007812 19.003906 183.832031 C 17.65625 179.601562 17.890625 177.078125 20.382812 174.59375 C 33.359375 161.625 46.25 148.570312 59.023438 135.402344 C 60.308594 134.078125 61.367188 131.71875 61.226562 129.941406 C 59.804688 112.402344 57.691406 94.910156 56.679688 77.351562 C 56.234375 69.664062 53.035156 64.484375 47.6875 59.496094 C 38.660156 51.074219 30.253906 41.980469 21.328125 33.4375 C 18.273438 30.507812 17.179688 27.46875 18.003906 23.890625 C 29.886719 35.324219 41.921875 46.910156 54.609375 59.125 C 54.226562 54.835938 53.964844 51.109375 53.476562 47.410156 C 53.40625 46.871094 52.183594 46.546875 51.605469 46.003906 C 50.742188 45.199219 49.410156 44.339844 49.324219 43.402344 C 49.226562 42.398438 50.253906 41.21875 50.964844 40.242188 C 51.273438 39.816406 52.464844 39.746094 52.492188 39.445312 C 53.046875 33.558594 58.90625 33.128906 62.078125 29.960938 C 63.328125 28.714844 64.855469 27.351562 65.296875 25.773438 C 65.824219 23.878906 65.652344 22.34375 68.414062 22.265625 C 71.175781 22.1875 72.304688 23.210938 72.246094 26.234375 C 76.464844 25.9375 80.433594 25.835938 84.324219 25.253906 C 85.3125 25.105469 86.066406 23.410156 87.492188 21.777344 C 94.769531 21.777344 102.972656 21.769531 111.175781 21.796875 C 111.632812 21.800781 112.453125 22.023438 112.5 22.261719 C 113.308594 26.429688 117.050781 25.390625 119.617188 26.183594 C 125.039062 27.863281 130.183594 29.875 134.398438 33.894531 C 135.074219 34.539062 136.695312 34.191406 137.875 34.300781 C 140.230469 34.519531 143.121094 33.992188 144.777344 35.183594 C 146.308594 36.28125 147.53125 39.515625 147.03125 41.28125 C 146.480469 43.21875 143.917969 44.710938 141.996094 46.070312 C 141.222656 46.617188 139.835938 46.292969 138.453125 46.382812 L 138.453125 52.863281 C 140.234375 51.992188 141.875 51.625 142.890625 50.625 C 150.871094 42.730469 158.753906 34.734375 166.609375 26.710938 C 167.730469 25.5625 168.53125 24.097656 169.980469 23.125 C 171.246094 26.613281 171.851562 29.460938 169.0625 32.167969 C 163.15625 37.90625 157.519531 43.929688 151.628906 49.683594 C 149.800781 51.464844 148.832031 53.238281 148.929688 55.851562 C 149.09375 60.214844 148.835938 64.59375 148.933594 68.960938 C 148.984375 71.1875 148.265625 72.238281 145.949219 72.046875 C 144.707031 71.941406 143.453125 72.027344 142.203125 72.03125 C 135.882812 72.039062 136.003906 72.050781 135.539062 78.195312 C 134.160156 96.492188 132.734375 114.785156 131.167969 133.066406 C 130.949219 135.589844 131.636719 137.246094 133.359375 138.980469 C 145.15625 150.839844 156.789062 162.859375 168.652344 174.652344 C 171.238281 177.222656 172.371094 179.785156 171.582031 182.703125 C 161.660156 173.15625 151.527344 163.40625 140.9375 153.21875 C 140.265625 155.890625 139.929688 157.824219 139.289062 159.648438 C 135.472656 170.570312 121.042969 173.238281 113.351562 164.539062 C 112.542969 163.625 111.222656 162.617188 110.128906 162.601562 C 99.019531 162.457031 87.910156 162.507812 76.800781 162.523438 C 76.453125 162.523438 76.109375 162.734375 75.617188 162.894531 "/><path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 91.21875 79.445312 C 97.710938 79.445312 104.011719 79.496094 110.3125 79.367188 C 110.960938 79.351562 112.046875 78.320312 112.136719 77.652344 C 112.378906 75.824219 112.363281 73.914062 112.109375 72.085938 C 112.011719 71.386719 111 70.285156 110.386719 70.269531 C 104.082031 70.136719 97.773438 70.1875 91.21875 70.1875 Z M 93.679688 98.921875 C 88.601562 93.804688 83.175781 88.332031 77.742188 82.863281 C 72.992188 78.085938 68.21875 73.339844 63.511719 68.519531 C 62.582031 67.566406 61.363281 66.414062 61.222656 65.238281 C 60.382812 58.359375 59.820312 51.445312 59.140625 44.277344 L 132.664062 44.277344 C 131.410156 47.261719 134.945312 51.132812 129.71875 52.8125 C 129.207031 52.980469 129.007812 55.113281 129.175781 56.261719 C 130.042969 62.234375 127.753906 66.488281 123.289062 70.53125 C 113.3125 79.5625 103.824219 89.132812 93.679688 98.921875 "/><path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 94.769531 107.824219 C 104.820312 117.96875 114.699219 127.941406 124.800781 138.140625 C 124.039062 138.371094 123.308594 138.636719 122.558594 138.816406 C 114.773438 140.675781 110.335938 145.5 109.164062 153.476562 C 109.003906 154.570312 107.640625 156.347656 106.816406 156.359375 C 94.625 156.546875 82.433594 156.488281 69.746094 156.488281 C 69.21875 149.199219 68.675781 142.167969 68.261719 135.132812 C 68.222656 134.40625 68.824219 133.480469 69.390625 132.90625 C 77.429688 124.734375 85.511719 116.605469 93.59375 108.480469 C 93.84375 108.230469 94.230469 108.117188 94.769531 107.824219 "/><path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 98.640625 103.570312 C 109.09375 93.222656 119.207031 83.214844 129.886719 72.644531 C 128.429688 92.09375 127.007812 111.097656 125.496094 131.339844 C 116.023438 121.546875 107.296875 112.523438 98.640625 103.570312 "/><path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 66.882812 125.03125 C 65.371094 109.546875 63.714844 92.605469 62.042969 75.464844 C 71.367188 85.019531 80.457031 94.335938 90.203125 104.324219 C 82.769531 110.921875 74.617188 118.160156 66.882812 125.03125 "/><path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 113.355469 31.589844 C 120.324219 32.214844 127.621094 33.480469 132.476562 41.265625 C 130.417969 41.378906 129.117188 41.515625 127.816406 41.515625 C 106 41.546875 84.183594 41.578125 62.367188 41.527344 C 61.1875 41.523438 60.011719 40.773438 58.835938 40.371094 C 59.507812 39.40625 60.035156 38.285156 60.878906 37.511719 C 62.613281 35.921875 64.386719 34.574219 67.117188 35.851562 C 68.335938 36.421875 70.042969 35.945312 71.808594 35.945312 C 71.808594 32.21875 74.230469 31.9375 77.039062 31.953125 C 79.148438 31.96875 81.269531 31.421875 83.359375 31.546875 C 84.566406 31.621094 85.714844 32.558594 86.902344 33.074219 C 87.644531 33.394531 88.40625 33.890625 89.160156 33.902344 C 96.015625 33.984375 102.878906 34.097656 109.726562 33.886719 C 110.957031 33.851562 112.148438 32.390625 113.355469 31.589844 "/><path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 125.179688 159.117188 C 127.71875 158.894531 129.445312 157.6875 129.375 154.957031 C 129.308594 152.292969 127.628906 150.867188 125.042969 150.90625 C 122.625 150.941406 121.03125 152.289062 121.03125 154.828125 C 121.03125 157.457031 122.492188 158.917969 125.179688 159.117188 M 125.347656 164.8125 C 119.730469 164.890625 114.90625 160.359375 114.789062 154.902344 C 114.667969 148.945312 119.308594 144.328125 125.429688 144.324219 C 131.042969 144.320312 135.53125 148.878906 135.535156 154.597656 C 135.542969 160.210938 131.027344 164.738281 125.347656 164.8125 "/><path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 144.703125 67.90625 L 136.753906 67.90625 C 136.332031 64.429688 138.328125 61.769531 144.703125 57.300781 Z M 144.703125 67.90625 "/><path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 107.511719 30.222656 L 91.625 30.222656 C 91.460938 29.871094 91.292969 29.515625 91.125 29.160156 C 92.132812 28.6875 93.117188 27.859375 94.152344 27.792969 C 104.808594 27.109375 106.558594 27.433594 107.511719 30.222656 "/><path fill-rule="nonzero" fill="rgb(13.725281%, 12.156677%, 12.548828%)" fill-opacity="1" d="M 91.21875 79.445312 L 91.21875 70.1875 C 97.773438 70.1875 104.082031 70.136719 110.386719 70.269531 C 111 70.285156 112.011719 71.386719 112.109375 72.085938 C 112.363281 73.914062 112.378906 75.824219 112.136719 77.652344 C 112.046875 78.320312 110.960938 79.351562 110.3125 79.367188 C 104.011719 79.496094 97.710938 79.445312 91.21875 79.445312 "/><path fill-rule="nonzero" fill="rgb(13.725281%, 12.156677%, 12.548828%)" fill-opacity="1" d="M 125.179688 159.117188 C 122.492188 158.917969 121.03125 157.457031 121.03125 154.828125 C 121.03125 152.289062 122.625 150.941406 125.042969 150.90625 C 127.628906 150.867188 129.308594 152.292969 129.375 154.957031 C 129.445312 157.6875 127.71875 158.894531 125.179688 159.117188 "/></g></defs><use xlink:href="#source-5" transform="matrix(1, 0, 0, 1, 325, 197)"/></svg>
   </div>
 
-  <!-- 底部版权文字 -->
+  <!-- 底部版权文字 (根据新厂商更新) -->
   <div class="footer-text" data-i18n="footer_text">
     Shenzhen Da zheng Energy Co., LTD.<br>
     Compliant with Regulation (EU) 2023/1542 (EU Battery Regulation)
@@ -404,14 +414,14 @@
   const translations = {
     // 英语 (默认)
     en: {
-      header_title: "BJY 18650",
+      header_title: "18650",
       header_subtitle: "Lithium-ion Battery",
-      manu_title: "Manufacturer",
-      manu_name: "Shenzhen Da zheng Energy Co., LTD.",
-      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian community, Longgang Street, Longgang District, Shenzhen City, Guangdong Province, China.",
+      manu_title: "Manufacturer", 
+      manu_name: "Shenzhen Da zheng Energy Co., LTD.", 
+      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian community, Longgang Street, Longgang District, Shenzhen City, Guangdong Province, China.", 
       manu_contact_name: "Cen Yingshun",
-      lbl_mobile: "Mobile:", lbl_contact: "Contact:", lbl_email: "Email:", lbl_website: "Website:",
-      batt_id_title: "Battery ID", lbl_product: "Product", val_product: "Lithium-ion Battery", lbl_model: "Model", lbl_batch: "Batch",
+      lbl_phone: "Phone:", lbl_mobile: "Mobile:", lbl_contact: "Contact:", lbl_email: "Email:", lbl_website: "Website:",
+      batt_id_title: "Battery ID", lbl_product: "Product", val_product: "Lithium-ion Battery", lbl_batt_cat: "Battery category", val_batt_cat: "Portable battery", lbl_model: "Model", lbl_batch: "Batch",
       manu_fac_title: "Manufacturing", lbl_place: "Place", val_place: "Shenzhen, Guangdong, China", lbl_date: "Date", val_date: "November 2026",
       spec_title: "Specifications", lbl_weight: "Weight", lbl_size: "Size (mm) L*W", lbl_voltage: "Voltage", lbl_capacity: "Capacity", lbl_chem: "Chemistry", val_chem: "Li-ion LCO",
       hazard_title: "Hazardous Substances", val_nd: "Not Detected", tbl_lead: "Lead", tbl_cad: "Cadmium", tbl_mer: "Mercury",
@@ -436,14 +446,13 @@
     },
     // 中文
     zh: {
-      header_title: "BJY 18650",
-      header_subtitle: "锂离子电池",
-      manu_title: "制造商",
-      manu_name: "深圳市大正能源有限公司",
-      manu_address: "中国广东省深圳市龙岗区龙岗街道南联社区向银路35-1号安旭商务园综合楼509室",
+      header_title: "18650", header_subtitle: "锂离子电池",
+      manu_title: "制造商", 
+      manu_name: "深圳市大正能源有限公司", 
+      manu_address: "中国广东省深圳市龙岗区龙岗街道南联社区向银路35-1号安旭商务园综合楼509室", 
       manu_contact_name: "岑英舜",
-      lbl_mobile: "手机:", lbl_contact: "联系人:", lbl_email: "邮箱:", lbl_website: "网站:",
-      batt_id_title: "电池 ID", lbl_product: "产品", val_product: "锂离子电池", lbl_model: "型号", lbl_batch: "批次",
+      lbl_phone: "电话:", lbl_mobile: "手机:", lbl_contact: "联系人:", lbl_email: "邮箱:", lbl_website: "网站:",
+      batt_id_title: "电池 ID", lbl_product: "产品", val_product: "锂离子电池", lbl_batt_cat: "电池类别", val_batt_cat: "便携式电池", lbl_model: "型号", lbl_batch: "批次",
       manu_fac_title: "制造信息", lbl_place: "地点", val_place: "中国广东深圳", lbl_date: "日期", val_date: "2026年11月",
       spec_title: "规格参数", lbl_weight: "重量", lbl_size: "尺寸 (mm) 长*宽", lbl_voltage: "电压", lbl_capacity: "容量", lbl_chem: "化学成分", val_chem: "Li-ion LCO",
       hazard_title: "有害物质", val_nd: "未检出", tbl_lead: "铅", tbl_cad: "镉", tbl_mer: "汞",
@@ -468,13 +477,13 @@
     },
     // 德语
     de: {
-      header_title: "BJY 18650", header_subtitle: "Lithium-Ionen-Akku",
-      manu_title: "Hersteller",
-      manu_name: "Shenzhen Da zheng Energy Co., LTD.",
-      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian community, Longgang Street, Longgang District, Shenzhen City, Provinz Guangdong, China.",
+      header_title: "18650", header_subtitle: "Lithium-Ionen-Akku",
+      manu_title: "Hersteller", 
+      manu_name: "Shenzhen Da zheng Energy Co., LTD.", 
+      manu_address: "Raum 509, An Xu Business Park Complex, Xiang Yin Road 35-1, Gemeinde Nan Lian, Longgang Street, Bezirk Longgang, Stadt Shenzhen, Provinz Guangdong, China.", 
       manu_contact_name: "Cen Yingshun",
-      lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-Mail:", lbl_website: "Webseite:",
-      batt_id_title: "Akku-ID", lbl_product: "Produkt", val_product: "Lithium-Ionen-Akku", lbl_model: "Modell", lbl_batch: "Charge",
+      lbl_phone: "Telefon:", lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-Mail:", lbl_website: "Webseite:",
+      batt_id_title: "Akku-ID", lbl_product: "Produkt", val_product: "Lithium-Ionen-Akku", lbl_batt_cat: "Akku-Kategorie", val_batt_cat: "Tragbarer Akku", lbl_model: "Modell", lbl_batch: "Charge",
       manu_fac_title: "Herstellung", lbl_place: "Ort", val_place: "Shenzhen, Guangdong, China", lbl_date: "Datum", val_date: "November 2026",
       spec_title: "Spezifikationen", lbl_weight: "Gewicht", lbl_size: "Größe (mm) L*B", lbl_voltage: "Spannung", lbl_capacity: "Kapazität", lbl_chem: "Chemie", val_chem: "Li-ion LCO",
       hazard_title: "Gefahrstoffe", val_nd: "Nicht nachgewiesen", tbl_lead: "Blei", tbl_cad: "Cadmium", tbl_mer: "Quecksilber",
@@ -499,13 +508,13 @@
     },
     // 法语
     fr: {
-      header_title: "BJY 18650", header_subtitle: "Batterie Lithium-ion",
-      manu_title: "Fabricant",
-      manu_name: "Shenzhen Da zheng Energy Co., LTD.",
-      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian community, Longgang Street, Longgang District, Shenzhen, Province du Guangdong, Chine.",
+      header_title: "18650", header_subtitle: "Batterie Lithium-ion",
+      manu_title: "Fabricant", 
+      manu_name: "Shenzhen Da zheng Energy Co., LTD.", 
+      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, communauté de Nan Lian, Longgang Street, district de Longgang, ville de Shenzhen, province du Guangdong, Chine.", 
       manu_contact_name: "Cen Yingshun",
-      lbl_mobile: "Mobile :", lbl_contact: "Contact :", lbl_email: "E-mail :", lbl_website: "Site Web :",
-      batt_id_title: "ID de la batterie", lbl_product: "Produit", val_product: "Batterie Lithium-ion", lbl_model: "Modèle", lbl_batch: "Lot",
+      lbl_phone: "Téléphone :", lbl_mobile: "Mobile :", lbl_contact: "Contact :", lbl_email: "E-mail :", lbl_website: "Site Web :",
+      batt_id_title: "ID de la batterie", lbl_product: "Produit", val_product: "Batterie Lithium-ion", lbl_batt_cat: "Catégorie de batterie", val_batt_cat: "Batterie portable", lbl_model: "Modèle", lbl_batch: "Lot",
       manu_fac_title: "Fabrication", lbl_place: "Lieu", val_place: "Shenzhen, Guangdong, Chine", lbl_date: "Date", val_date: "Novembre 2026",
       spec_title: "Spécifications", lbl_weight: "Poids", lbl_size: "Taille (mm) L*L", lbl_voltage: "Tension", lbl_capacity: "Capacité", lbl_chem: "Chimie", val_chem: "Li-ion LCO",
       hazard_title: "Substances dangereuses", val_nd: "Non détecté", tbl_lead: "Plomb", tbl_cad: "Cadmium", tbl_mer: "Mercure",
@@ -530,13 +539,13 @@
     },
     // 西班牙语
     es: {
-      header_title: "BJY 18650", header_subtitle: "Batería de iones de litio",
-      manu_title: "Fabricante",
-      manu_name: "Shenzhen Da zheng Energy Co., LTD.",
-      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian community, Longgang Street, Longgang District, Shenzhen City, Provincia de Guangdong, China.",
+      header_title: "18650", header_subtitle: "Batería de iones de litio",
+      manu_title: "Fabricante", 
+      manu_name: "Shenzhen Da zheng Energy Co., LTD.", 
+      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, comunidad de Nan Lian, Longgang Street, distrito de Longgang, ciudad de Shenzhen, provincia de Guangdong, China.", 
       manu_contact_name: "Cen Yingshun",
-      lbl_mobile: "Móvil:", lbl_contact: "Contacto:", lbl_email: "Correo:", lbl_website: "Sitio web:",
-      batt_id_title: "ID de la batería", lbl_product: "Producto", val_product: "Batería de iones de litio", lbl_model: "Modelo", lbl_batch: "Lote",
+      lbl_phone: "Teléfono:", lbl_mobile: "Móvil:", lbl_contact: "Contacto:", lbl_email: "Correo:", lbl_website: "Sitio web:",
+      batt_id_title: "ID de la batería", lbl_product: "Producto", val_product: "Batería de iones de litio", lbl_batt_cat: "Categoría de batería", val_batt_cat: "Batería portátil", lbl_model: "Modelo", lbl_batch: "Lote",
       manu_fac_title: "Fabricación", lbl_place: "Lugar", val_place: "Shenzhen, Guangdong, China", lbl_date: "Fecha", val_date: "Noviembre 2026",
       spec_title: "Especificaciones", lbl_weight: "Peso", lbl_size: "Tamaño (mm) L*An", lbl_voltage: "Voltaje", lbl_capacity: "Capacidad", lbl_chem: "Química", val_chem: "Li-ion LCO",
       hazard_title: "Sustancias peligrosas", val_nd: "No detectado", tbl_lead: "Plomo", tbl_cad: "Cadmio", tbl_mer: "Mercurio",
@@ -561,13 +570,13 @@
     },
     // 意大利语
     it: {
-      header_title: "BJY 18650", header_subtitle: "Batteria agli ioni di litio",
-      manu_title: "Produttore",
-      manu_name: "Shenzhen Da zheng Energy Co., LTD.",
-      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian community, Longgang Street, Longgang District, Shenzhen, Provincia di Guangdong, Cina.",
+      header_title: "18650", header_subtitle: "Batteria agli ioni di litio",
+      manu_title: "Produttore", 
+      manu_name: "Shenzhen Da zheng Energy Co., LTD.", 
+      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, comunità di Nan Lian, Longgang Street, distretto di Longgang, città di Shenzhen, provincia di Guangdong, Cina.", 
       manu_contact_name: "Cen Yingshun",
-      lbl_mobile: "Cellulare:", lbl_contact: "Contatto:", lbl_email: "Email:", lbl_website: "Sito web:",
-      batt_id_title: "ID batteria", lbl_product: "Prodotto", val_product: "Batteria agli ioni di litio", lbl_model: "Modello", lbl_batch: "Lotto",
+      lbl_phone: "Telefono:", lbl_mobile: "Cellulare:", lbl_contact: "Contatto:", lbl_email: "Email:", lbl_website: "Sito web:",
+      batt_id_title: "ID batteria", lbl_product: "Prodotto", val_product: "Batteria agli ioni di litio", lbl_batt_cat: "Categoria batteria", val_batt_cat: "Batteria portatile", lbl_model: "Modello", lbl_batch: "Lotto",
       manu_fac_title: "Produzione", lbl_place: "Luogo", val_place: "Shenzhen, Guangdong, Cina", lbl_date: "Data", val_date: "Novembre 2026",
       spec_title: "Specifiche", lbl_weight: "Peso", lbl_size: "Dimensioni (mm) L*L", lbl_voltage: "Tensione", lbl_capacity: "Capacità", lbl_chem: "Chimica", val_chem: "Li-ion LCO",
       hazard_title: "Sostanze pericolose", val_nd: "Non rilevato", tbl_lead: "Piombo", tbl_cad: "Cadmio", tbl_mer: "Mercurio",
@@ -592,13 +601,13 @@
     },
     // 荷兰语
     nl: {
-      header_title: "BJY 18650", header_subtitle: "Lithium-ionbatterij",
-      manu_title: "Fabrikant",
-      manu_name: "Shenzhen Da zheng Energy Co., LTD.",
-      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian community, Longgang Street, Longgang District, Shenzhen City, Provincie Guangdong, China.",
+      header_title: "18650", header_subtitle: "Lithium-ionbatterij",
+      manu_title: "Fabrikant", 
+      manu_name: "Shenzhen Da zheng Energy Co., LTD.", 
+      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, gemeenschap Nan Lian, Longgang Street, district Longgang, stad Shenzhen, provincie Guangdong, China.", 
       manu_contact_name: "Cen Yingshun",
-      lbl_mobile: "Mobiel:", lbl_contact: "Contactpersoon:", lbl_email: "E-mail:", lbl_website: "Website:",
-      batt_id_title: "Batterij-ID", lbl_product: "Product", val_product: "Lithium-ionbatterij", lbl_model: "Model", lbl_batch: "Batch",
+      lbl_phone: "Telefoon:", lbl_mobile: "Mobiel:", lbl_contact: "Contactpersoon:", lbl_email: "E-mail:", lbl_website: "Website:",
+      batt_id_title: "Batterij-ID", lbl_product: "Product", val_product: "Lithium-ionbatterij", lbl_batt_cat: "Batterijcategorie", val_batt_cat: "Draagbare batterij", lbl_model: "Model", lbl_batch: "Batch",
       manu_fac_title: "Productie", lbl_place: "Locatie", val_place: "Shenzhen, Guangdong, China", lbl_date: "Datum", val_date: "November 2026",
       spec_title: "Specificaties", lbl_weight: "Gewicht", lbl_size: "Afmeting (mm) L*B", lbl_voltage: "Spanning", lbl_capacity: "Capaciteit", lbl_chem: "Chemie", val_chem: "Li-ion LCO",
       hazard_title: "Gevaarlijke stoffen", val_nd: "Niet gedetecteerd", tbl_lead: "Lood", tbl_cad: "Cadmium", tbl_mer: "Kwik",
@@ -623,13 +632,13 @@
     },
     // 葡萄牙语
     pt: {
-      header_title: "BJY 18650", header_subtitle: "Bateria de íons de lítio",
-      manu_title: "Fabricante",
-      manu_name: "Shenzhen Da zheng Energy Co., LTD.",
-      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian community, Longgang Street, Longgang District, Shenzhen City, Província de Guangdong, China.",
+      header_title: "18650", header_subtitle: "Bateria de íons de lítio",
+      manu_title: "Fabricante", 
+      manu_name: "Shenzhen Da zheng Energy Co., LTD.", 
+      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, comunidade Nan Lian, Longgang Street, distrito de Longgang, cidade de Shenzhen, província de Guangdong, China.", 
       manu_contact_name: "Cen Yingshun",
-      lbl_mobile: "Celular:", lbl_contact: "Contato:", lbl_email: "E-mail:", lbl_website: "Site:",
-      batt_id_title: "ID da Bateria", lbl_product: "Produto", val_product: "Bateria de íons de lítio", lbl_model: "Modelo", lbl_batch: "Lote",
+      lbl_phone: "Telefone:", lbl_mobile: "Celular:", lbl_contact: "Contato:", lbl_email: "E-mail:", lbl_website: "Site:",
+      batt_id_title: "ID da Bateria", lbl_product: "Produto", val_product: "Bateria de íons de lítio", lbl_batt_cat: "Categoria da bateria", val_batt_cat: "Bateria portátil", lbl_model: "Modelo", lbl_batch: "Lote",
       manu_fac_title: "Fabricação", lbl_place: "Local", val_place: "Shenzhen, Guangdong, China", lbl_date: "Data", val_date: "Novembro de 2026",
       spec_title: "Especificações", lbl_weight: "Peso", lbl_size: "Tamanho (mm) C*L", lbl_voltage: "Voltagem", lbl_capacity: "Capacidade", lbl_chem: "Química", val_chem: "Li-ion LCO",
       hazard_title: "Substâncias Perigosas", val_nd: "Não detectado", tbl_lead: "Chumbo", tbl_cad: "Cádmio", tbl_mer: "Mercúrio",
@@ -654,13 +663,13 @@
     },
     // 波兰语
     pl: {
-      header_title: "BJY 18650", header_subtitle: "Akumulator litowo-jonowy",
-      manu_title: "Producent",
-      manu_name: "Shenzhen Da zheng Energy Co., LTD.",
-      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian community, Longgang Street, Longgang District, Shenzhen City, Prowincja Guangdong, Chiny.",
+      header_title: "18650", header_subtitle: "Akumulator litowo-jonowy",
+      manu_title: "Producent", 
+      manu_name: "Shenzhen Da zheng Energy Co., LTD.", 
+      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, wspólnota Nan Lian, Longgang Street, dzielnica Longgang, miasto Shenzhen, prowincja Guangdong, Chiny.", 
       manu_contact_name: "Cen Yingshun",
-      lbl_mobile: "Telefon:", lbl_contact: "Osoba kontaktowa:", lbl_email: "E-mail:", lbl_website: "Strona internetowa:",
-      batt_id_title: "Identyfikator baterii", lbl_product: "Produkt", val_product: "Akumulator litowo-jonowy", lbl_model: "Model", lbl_batch: "Partia",
+      lbl_phone: "Telefon:", lbl_mobile: "Telefon komórkowy:", lbl_contact: "Osoba kontaktowa:", lbl_email: "E-mail:", lbl_website: "Strona internetowa:",
+      batt_id_title: "Identyfikator baterii", lbl_product: "Produkt", val_product: "Akumulator litowo-jonowy", lbl_batt_cat: "Kategoria baterii", val_batt_cat: "Bateria przenośna", lbl_model: "Model", lbl_batch: "Partia",
       manu_fac_title: "Produkcja", lbl_place: "Miejsce", val_place: "Shenzhen, Guangdong, Chiny", lbl_date: "Data", val_date: "Listopad 2026",
       spec_title: "Specyfikacje", lbl_weight: "Waga", lbl_size: "Rozmiar (mm) Dł*Szer", lbl_voltage: "Napięcie", lbl_capacity: "Pojemność", lbl_chem: "Chemia", val_chem: "Li-ion LCO",
       hazard_title: "Substancje niebezpieczne", val_nd: "Nie wykryto", tbl_lead: "Ołów", tbl_cad: "Kadm", tbl_mer: "Rtęć",
@@ -685,13 +694,13 @@
     },
     // 瑞典语
     sv: {
-      header_title: "BJY 18650", header_subtitle: "Litiumjonbatteri",
-      manu_title: "Tillverkare",
-      manu_name: "Shenzhen Da zheng Energy Co., LTD.",
-      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian community, Longgang Street, Longgang District, Shenzhen City, Guangdong-provinsen, Kina.",
+      header_title: "18650", header_subtitle: "Litiumjonbatteri",
+      manu_title: "Tillverkare", 
+      manu_name: "Shenzhen Da zheng Energy Co., LTD.", 
+      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian-området, Longgang Street, Longgang-distriktet, Shenzhen stad, Guangdong-provinsen, Kina.", 
       manu_contact_name: "Cen Yingshun",
-      lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-post:", lbl_website: "Webbplats:",
-      batt_id_title: "Batteri-ID", lbl_product: "Produkt", val_product: "Litiumjonbatteri", lbl_model: "Modell", lbl_batch: "Batch",
+      lbl_phone: "Telefon:", lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-post:", lbl_website: "Webbplats:",
+      batt_id_title: "Batteri-ID", lbl_product: "Produkt", val_product: "Litiumjonbatteri", lbl_batt_cat: "Batterikategori", val_batt_cat: "Bärbart batteri", lbl_model: "Modell", lbl_batch: "Batch",
       manu_fac_title: "Tillverkning", lbl_place: "Plats", val_place: "Shenzhen, Guangdong, Kina", lbl_date: "Datum", val_date: "November 2026",
       spec_title: "Specifikationer", lbl_weight: "Vikt", lbl_size: "Storlek (mm) L*B", lbl_voltage: "Spänning", lbl_capacity: "Kapacitet", lbl_chem: "Kemi", val_chem: "Li-ion LCO",
       hazard_title: "Farliga ämnen", val_nd: "Ej detekterad", tbl_lead: "Bly", tbl_cad: "Kadmium", tbl_mer: "Kvicksilver",
@@ -716,15 +725,159 @@
     },
     // 丹麦语
     da: {
-      header_title: "BJY 18650", header_subtitle: "Lithium-ion batteri",
-      manu_title: "Producent",
-      manu_name: "Shenzhen Da zheng Energy Co., LTD.",
-      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian community, Longgang Street, Longgang District, Shenzhen City, Guangdong-provinsen, Kina.",
+      header_title: "18650", header_subtitle: "Lithium-ion batteri",
+      manu_title: "Producent", 
+      manu_name: "Shenzhen Da zheng Energy Co., LTD.", 
+      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian-samfundet, Longgang Street, Longgang-distriktet, Shenzhen by, Guangdong-provinsen, Kina.", 
       manu_contact_name: "Cen Yingshun",
-      lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-mail:", lbl_website: "Hjemmeside:",
-      batt_id_title: "Batteri-ID", lbl_product: "Produkt", val_product: "Lithium-ion batteri", lbl_model: "Model", lbl_batch: "Batch",
+      lbl_phone: "Telefon:", lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-mail:", lbl_website: "Hjemmeside:",
+      batt_id_title: "Batteri-ID", lbl_product: "Produkt", val_product: "Lithium-ion batteri", lbl_batt_cat: "Batterikategori", val_batt_cat: "Bærbart batteri", lbl_model: "Model", lbl_batch: "Batch",
       manu_fac_title: "Fremstilling", lbl_place: "Sted", val_place: "Shenzhen, Guangdong, Kina", lbl_date: "Dato", val_date: "November 2026",
       spec_title: "Specifikationer", lbl_weight: "Vægt", lbl_size: "Størrelse (mm) L*B", lbl_voltage: "Spænding", lbl_capacity: "Kapacitet", lbl_chem: "Kemi", val_chem: "Li-ion LCO",
       hazard_title: "Farlige stoffer", val_nd: "Ikke påvist", tbl_lead: "Bly", tbl_cad: "Cadmium", tbl_mer: "Kviksølv",
       haz_contains_title: "Indeholder følgende farlige stoffer",
-      sub_lco: "Lithiumcobaltoxid", sub_lipf6: "Lithiumhexafluorophosphat", sub_ec: "Ethylencarbonat", sub_dmc: "Dim
+      sub_lco: "Lithiumcobaltoxid", sub_lipf6: "Lithiumhexafluorophosphat", sub_ec: "Ethylencarbonat", sub_dmc: "Dimethylcarbonat",
+      ext_title: "Slukningsmidler", ext_water: "Vand", ext_sand: "Tørt sand",
+      chem_title: "Kemisk sammensætning (Kritiske råmaterialer >0,1%)", chem_name: "Kemisk navn", chem_mass: "Masse %", chem_li: "Lithium", chem_fe: "Fe", chem_gra: "Grafit", chem_al: "Aluminium", chem_cu: "Kobber", chem_co: "Kobolt",
+      green_title: "Oplysninger om forebyggelse og håndtering af affald af lithium-ion batterier",
+      green_a: "a) Affaldsforebyggelse", green_a_desc: "For at hjælpe med at forhindre batteriaffald og forlænge levetiden:",
+      green_a_li1: "Oplad og brug kun batteriet som beskrevet i denne manual.", green_a_li2: "Opbevar produktet på et køligt, tørt sted væk fra direkte sollys, overdreven varme, fugt og ætsende miljøer.", green_a_li3: "Undgå at tabe, knuse, punktere, adskille, ændre eller udsætte batteriet for overdrevne mekaniske stød.", green_a_li4: "Udsæt ikke batteriet for ild eller temperaturer, der overstiger de specificerede grænser.", green_a_li5: "Korrekt brug, opladning og opbevaring maksimerer batteriets levetid og reducerer affald.",
+      green_b: "b) Separat indsamling af brugte batterier", green_b_desc: "Bortskaf ikke lithium-ion batterier med husholdningsaffald.",
+      green_b_li1: "Ved slutningen af batteriets levetid skal det bortskaffes via udpegede indsamlingssteder eller autoriserede genbrugsanlæg i overensstemmelse med lokale regler.", green_b_li2: "Brug om muligt tilbagetagningsordninger fra forhandlere, kommuner eller producenter.",
+      green_c: "c) Indsamling, tilbagetagning, genbrug, omformål og behandling", green_c_desc: "Brugte lithium-ion batterier bør indsamles separat for at muliggøre genbrug, recycling og materialegenindvinding.",
+      green_c_li1: "Separat indsamling hjælper med at bevare værdifulde råmaterialer og reducerer miljøpåvirkningen.", green_c_li2: "Indsamlings- og behandlingstjenester er tilgængelige via autoriserede indsamlingssteder og genbrugsanlæg.",
+      green_d: "d) Sikkerhedsinstruktioner til håndtering af brugte batterier", green_d_desc: "Håndtér brugte batterier forsigtigt for at forhindre kortslutning, brand eller lækage.",
+      green_d_li1: "Knus, punkter, adskil, brænd ikke eller udsæt ikke brugte batterier for overdreven varme.", green_d_li2: "Hvis batteriet er beskadiget, opsvulmet, lækker eller overophedet, skal du straks stoppe brugen og bortskaffe det via et autoriseret indsamlingssted.", green_d_li3: "Dæk om muligt blottede batteriterminaler med isoleringstape før bortskaffelse.", green_d_li4: "Opbevar brugte batterier på et køligt, tørt sted væk fra metalgenstande og brændbare materialer.",
+      green_e: "e) Betydning af etiketter og symboler", green_e_li1: "<strong>Overstreget skraldespand:</strong> Angiver, at batteriet ikke må bortskaffes med husholdningsaffald og skal indsamles separat.", green_e_li2: "<strong>CE-mærkning:</strong> Angiver, at produktet overholder EU-lovgivningen og kravene til overensstemmelsesvurdering.",
+      green_f: "f) Miljø- og sundhedsmæssig indvirkning af farlige stoffer", green_f_desc: "Lithium-ion batterier indeholder stoffer, der kan udgøre risici, hvis de håndteres forkert.",
+      green_f_li1: "Bortskaf aldrig batterier i ild, husholdningsaffald eller i naturen.", green_f_li2: "Korrekt indsamling og genbrug hjælper med at forhindre miljøforurening og muliggør genindvinding af værdifulde materialer.",
+      yellow_title: "Sikkerhedsadvarsel", yellow_li1: "Hold væk fra høje temperaturer.", yellow_li2: "Må ikke bruges, hvis det er nedsænket i vand.", yellow_li3: "Må ikke åbnes, knuses, punkteres eller brændes.", yellow_li4: "Stop med at bruge det, hvis det er opsvulmet eller beskadiget.",
+      footer_text: "Shenzhen Da zheng Energy Co., LTD.<br>Overholder forordning (EU) 2023/1542 (EU's batteriforordning)"
+    },
+    // 芬兰语
+    fi: {
+      header_title: "18650", header_subtitle: "Litiumioniakku",
+      manu_title: "Valmistaja", 
+      manu_name: "Shenzhen Da zheng Energy Co., LTD.", 
+      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lianin yhteisö, Longgang Street, Longgangin alue, Shenzhenin kaupunki, Guangdongin maakunta, Kiina.", 
+      manu_contact_name: "Cen Yingshun",
+      lbl_phone: "Puhelin:", lbl_mobile: "Matkapuhelin:", lbl_contact: "Yhteyshenkilö:", lbl_email: "Sähköposti:", lbl_website: "Verkkosivusto:",
+      batt_id_title: "Akun tunnus", lbl_product: "Tuote", val_product: "Litiumioniakku", lbl_batt_cat: "Akun luokka", val_batt_cat: "Kannettava akku", lbl_model: "Malli", lbl_batch: "Erä",
+      manu_fac_title: "Valmistus", lbl_place: "Paikka", val_place: "Shenzhen, Guangdong, Kiina", lbl_date: "Päivämäärä", val_date: "Marraskuu 2026",
+      spec_title: "Tekniset tiedot", lbl_weight: "Paino", lbl_size: "Koko (mm) P*L", lbl_voltage: "Jännite", lbl_capacity: "Kapasiteetti", lbl_chem: "Kemia", val_chem: "Li-ion LCO",
+      hazard_title: "Vaaralliset aineet", val_nd: "Ei havaittu", tbl_lead: "Lyijy", tbl_cad: "Kadmium", tbl_mer: "Elohopea",
+      haz_contains_title: "Sisältää seuraavia vaarallisia aineita",
+      sub_lco: "Litiumkobolttioksidi", sub_lipf6: "Litiumheksafluorofosfaatti", sub_ec: "Eteenikarbonaatti", sub_dmc: "Dimetyylikarbonaatti",
+      ext_title: "Sammutusaineet", ext_water: "Vesi", ext_sand: "Kuiva hiekka",
+      chem_title: "Kemiallinen koostumus (Kriittiset raaka-aineet >0,1%)", chem_name: "Kemiallinen nimi", chem_mass: "Massa %", chem_li: "Litium", chem_fe: "Fe", chem_gra: "Grafiitti", chem_al: "Alumiini", chem_cu: "Kupari", chem_co: "Koboltti",
+      green_title: "Tietoja käytettyjen litiumioniakkujen ehkäisystä ja hallinnasta",
+      green_a: "a) Jätteen ehkäisy", green_a_desc: "Akkujätteen estämiseksi ja käyttöiän pidentämiseksi:",
+      green_a_li1: "Lataa ja käytä akkua vain tässä käsikirjassa kuvatulla tavalla.", green_a_li2: "Säilytä tuotetta viileässä, kuivassa paikassa poissa suoralta auringonvalolta, liialliselta kuumuudelta, kosteudelta ja syövyttäviltä ympäristöiltä.", green_a_li3: "Vältä akun pudottamista, murskaamista, lävistämistä, purkamista, muuttamista tai altistamista liialliselle mekaaniselle iskulle.", green_a_li4: "Älä altista akkua tulelle tai lämpötiloille, jotka ylittävät määritetyt rajat.", green_a_li5: "Oikea käyttö, lataus ja säilytys maksimoivat akun käyttöiän ja vähentävät jätettä.",
+      green_b: "b) Käytettyjen akkujen erilliskeräys", green_b_desc: "Älä hävitä litiumioniakkuja sekajätteen mukana.",
+      green_b_li1: "Hävitä akku käyttöiän lopussa paikallisten määräysten mukaisesti määrättyihin keräyspisteisiin tai valtuutettuihin kierrätyslaitoksiin.", green_b_li2: "Käytä mahdollisuuksien mukaan vähittäiskauppiaiden, kuntien tai valmistajien palautusjärjestelmiä.",
+      green_c: "c) Keräys, takaisinotto, uudelleenkäyttö, uudelleenkohdistus ja käsittely", green_c_desc: "Käytetyt litiumioniakut on kerättävä erikseen uudelleenkäytön, kierrätyksen ja materiaalien talteenoton mahdollistamiseksi.",
+      green_c_li1: "Erilliskeräys auttaa säästämään arvokkaita raaka-aineita ja vähentää ympäristövaikutuksia.", green_c_li2: "Keräys- ja käsittelypalveluita on saatavilla valtuutettujen keräyspisteiden ja kierrätyslaitosten kautta.",
+      green_d: "d) Käytettyjen akkujen käsittelyn turvaohjeet", green_d_desc: "Käsittele käytettyjä akkuja huolellisesti oikosulkujen, tulipalojen tai vuotojen estämiseksi.",
+      green_d_li1: "Älä murskaa, lävistä, pura, polta tai altista käytettyjä akkuja liialliselle kuumuudelle.", green_d_li2: "Jos akku on vaurioitunut, turvonnut, vuotaa tai ylikuumenee, lopeta käyttö välittömästi ja hävitä se valtuutetussa keräyslaitoksessa.", green_d_li3: "Peitä paljaat akun navat tarvittaessa eristysteipillä ennen hävittämistä.", green_d_li4: "Säilytä käytettyjä akkuja viileässä, kuivassa paikassa poissa metalliesineistä ja syttyvistä materiaaleista.",
+      green_e: "e) Tarrojen ja symbolien merkitys", green_e_li1: "<strong>Yliviivattu jäteastia:</strong> Osoittaa, että akkua ei saa hävittää sekajätteen mukana ja se on kerättävä erikseen.", green_e_li2: "<strong>CE-merkintä:</strong> Osoittaa, että tuote on EU-lainsäädännön ja vaatimustenmukaisuuden arviointivaatimusten mukainen.",
+      green_f: "f) Vaarallisten aineiden ympäristö- ja terveysvaikutukset", green_f_desc: "Litiumioniakut sisältävät aineita, jotka voivat aiheuttaa riskejä, jos niitä käsitellään väärin.",
+      green_f_li1: "Älä koskaan hävitä akkuja tuleen, sekajätteeseen tai luontoon.", green_f_li2: "Asianmukainen keräys ja kierrätys auttavat estämään ympäristön saastumista ja mahdollistavat arvokkaiden materiaalien talteenoton.",
+      yellow_title: "Turvavaroitus", yellow_li1: "Pidä poissa korkeilta lämpötiloilta.", yellow_li2: "Älä käytä, jos se on upotettu veteen.", yellow_li3: "Älä avaa, murskaa, lävistä tai polta.", yellow_li4: "Lopeta käyttö, jos se on turvonnut tai vaurioitunut.",
+      footer_text: "Shenzhen Da zheng Energy Co., LTD.<br>Noudattaa asetusta (EU) 2023/1542 (EU:n akkuasetus)"
+    },
+    // 挪威语
+    no: {
+      header_title: "18650", header_subtitle: "Litium-ion-batteri",
+      manu_title: "Produsent", 
+      manu_name: "Shenzhen Da zheng Energy Co., LTD.", 
+      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, Nan Lian-samfunnet, Longgang Street, Longgang-distriktet, Shenzhen by, Guangdong-provinsen, Kina.", 
+      manu_contact_name: "Cen Yingshun",
+      lbl_phone: "Telefon:", lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-post:", lbl_website: "Nettsted:",
+      batt_id_title: "Batteri-ID", lbl_product: "Produkt", val_product: "Litium-ion-batteri", lbl_batt_cat: "Batterikategori", val_batt_cat: "Bærbart batteri", lbl_model: "Modell", lbl_batch: "Batch",
+      manu_fac_title: "Produksjon", lbl_place: "Sted", val_place: "Shenzhen, Guangdong, Kina", lbl_date: "Dato", val_date: "November 2026",
+      spec_title: "Spesifikasjoner", lbl_weight: "Vekt", lbl_size: "Størrelse (mm) L*B", lbl_voltage: "Spenning", lbl_capacity: "Kapasitet", lbl_chem: "Kjemi", val_chem: "Li-ion LCO",
+      hazard_title: "Farlige stoffer", val_nd: "Ikke påvist", tbl_lead: "Bly", tbl_cad: "Kadmium", tbl_mer: "Kvikksølv",
+      haz_contains_title: "Inneholder følgende farlige stoffer",
+      sub_lco: "Litiumkobolttoksid", sub_lipf6: "Litiumheksafluorofosfat", sub_ec: "Etylenkarbonat", sub_dmc: "Dimetylkarbonat",
+      ext_title: "Slukkemidler", ext_water: "Vann", ext_sand: "Tørr sand",
+      chem_title: "Kjemisk sammensetning (Kritiske råmaterialer >0,1%)", chem_name: "Kjemisk navn", chem_mass: "Masse %", chem_li: "Litium", chem_fe: "Fe", chem_gra: "Grafitt", chem_al: "Aluminium", chem_cu: "Kobber", chem_co: "Kobolt",
+      green_title: "Informasjon om forebygging og håndtering av avfall av litium-ion-batterier",
+      green_a: "a) Avfallsforebygging", green_a_desc: "For å bidra til å forhindre batteriavfall og forlenge levetiden:",
+      green_a_li1: "Lad og bruk batteriet kun som beskrevet i denne håndboken.", green_a_li2: "Oppbevar produktet på et kjølig, tørt sted borte fra direkte sollys, overdreven varme, fuktighet og korrosive miljøer.", green_a_li3: "Unngå å miste, knuse, punktere, demontere, modifisere eller utsette batteriet for overdreven mekanisk støt.", green_a_li4: "Ikke utsett batteriet for brann eller temperaturer som overstiger spesifiserte grenser.", green_a_li5: "Riktig bruk, lading og lagring maksimerer batterilevetiden og reduserer avfall.",
+      green_b: "b) Separat innsamling av brukte batterier", green_b_desc: "Ikke kast litium-ion-batterier i husholdningsavfallet.",
+      green_b_li1: "Ved slutten av batteriets levetid, kast det via utpekte innsamlingspunkter eller autoriserte gjenvinningsanlegg i samsvar med lokale forskrifter.", green_b_li2: "Bruk der det er tilgjengelig, returordninger for forhandlere, kommuner eller produsenter.",
+      green_c: "c) Innsamling, retur, gjenbruk, ombruk og behandling", green_c_desc: "Brukte litium-ion-batterier bør samles inn separat for å muliggjøre gjenbruk, resirkulering og materialgjenvinning.",
+      green_c_li1: "Separat innsamling bidrar til å bevare verdifulle råmaterialer og redusere miljøpåvirkningen.", green_c_li2: "Innsamlings- og behandlingstjenester er tilgjengelige via autoriserte innsamlingspunkter og gjenvinningsanlegg.",
+      green_d: "d) Sikkerhetsinstruksjoner for håndtering av brukte batterier", green_d_desc: "Håndter brukte batterier forsiktig for å forhindre kortslutning, brann eller lekkasje.",
+      green_d_li1: "Ikke knus, punkter, demonter, brenn eller utsett brukte batterier for overdreven varme.", green_d_li2: "Hvis batteriet er skadet, hovent, lekker eller overopphetet, må du slutte å bruke det umiddelbart og kaste det via et autorisert innsamlingsanlegg.", green_d_li3: "Dekk om mulig eksponerte batteripoler med isolasjonstape før kassering.", green_d_li4: "Oppbevar brukte batterier på et kjølig, tørt sted borte fra metallgjenstander og brennbart materiale.",
+      green_e: "e) Betydningen av etiketter og symboler", green_e_li1: "<strong>Overstreket søppelbøtte:</strong> Indikerer at batteriet ikke må kastes i husholdningsavfallet og må samles inn separat.", green_e_li2: "<strong>CE-merking:</strong> Indikerer at produktet samsvarer med EU-lovgivningen og samsvarsvurderingskravene.",
+      green_f: "f) Miljø- og helsepåvirkning av farlige stoffer", green_f_desc: "Litium-ion-batterier inneholder stoffer som kan utgjøre risiko hvis de håndteres feil.",
+      green_f_li1: "Kast aldri batterier i brann, husholdningsavfall eller i naturen.", green_f_li2: "Riktig innsamling og resirkulering bidrar til å forhindre miljøforurensning og muliggjør gjenvinning av verdifulle materialer.",
+      yellow_title: "Sikkerhetsadvarsel", yellow_li1: "Hold borte fra høye temperaturer.", yellow_li2: "Skal ikke brukes hvis det er nedsenket i vann.", yellow_li3: "Ikke åpne, knuse, punktere eller brenne.", yellow_li4: "Slutt å bruke hvis det er hovent eller skadet.",
+      footer_text: "Shenzhen Da zheng Energy Co., LTD.<br>Samsvarer med forordning (EU) 2023/1542 (EUs batteriforordning)"
+    },
+    // 克罗地亚语
+    hr: {
+      header_title: "18650", header_subtitle: "Litij-ionska baterija",
+      manu_title: "Proizvođač", 
+      manu_name: "Shenzhen Da zheng Energy Co., LTD.", 
+      manu_address: "509, An Xu Business Park Complex, 35-1 Xiang Yin Road, zajednica Nan Lian, Longgang Street, okrug Longgang, grad Shenzhen, provincija Guangdong, Kina.", 
+      manu_contact_name: "Cen Yingshun",
+      lbl_phone: "Telefon:", lbl_mobile: "Mobitel:", lbl_contact: "Kontakt:", lbl_email: "E-pošta:", lbl_website: "Web stranica:",
+      batt_id_title: "ID baterije", lbl_product: "Proizvod", val_product: "Litij-ionska baterija", lbl_batt_cat: "Kategorija baterije", val_batt_cat: "Prenosiva baterija", lbl_model: "Model", lbl_batch: "Serija",
+      manu_fac_title: "Proizvodnja", lbl_place: "Mjesto", val_place: "Shenzhen, Guangdong, Kina", lbl_date: "Datum", val_date: "Studeni 2026",
+      spec_title: "Specifikacije", lbl_weight: "Težina", lbl_size: "Veličina (mm) D*Š", lbl_voltage: "Napon", lbl_capacity: "Kapacitet", lbl_chem: "Kemija", val_chem: "Li-ion LCO",
+      hazard_title: "Opasne tvari", val_nd: "Nije otkriveno", tbl_lead: "Olovo", tbl_cad: "Kadmij", tbl_mer: "Živa",
+      haz_contains_title: "Sadrži sljedeće opasne tvari",
+      sub_lco: "Litijev kobaltov oksid", sub_lipf6: "Litijev heksafluorofosfat", sub_ec: "Etilen karbonat", sub_dmc: "Dimetil karbonat",
+      ext_title: "Sredstva za gašenje", ext_water: "Voda", ext_sand: "Suhi pijesak",
+      chem_title: "Kemijski sastav (Kritične sirovine >0,1%)", chem_name: "Kemijski naziv", chem_mass: "Maseni %", chem_li: "Litij", chem_fe: "Fe", chem_gra: "Grafit", chem_al: "Aluminij", chem_cu: "Bakar", chem_co: "Kobalt",
+      green_title: "Informacije o sprječavanju i gospodarenju otpadnim litij-ionskim baterijama",
+      green_a: "a) Sprječavanje nastanka otpada", green_a_desc: "Kako biste spriječili otpad od baterija i produžili vijek trajanja:",
+      green_a_li1: "Bateriju punite i koristite samo na način opisan u ovom priručniku.", green_a_li2: "Proizvod čuvajte na hladnom, suhom mjestu, daleko od izravne sunčeve svjetlosti, prekomjerne topline, vlage i korozivnih okruženja.", green_a_li3: "Izbjegavajte ispuštanje, drobljenje, bušenje, rastavljanje, modificiranje ili izlaganje baterije prekomjernim mehaničkim udarcima.", green_a_li4: "Ne izlažite bateriju vatri ili temperaturama koje premašuju navedena ograničenja.", green_a_li5: "Pravilna uporaba, punjenje i skladištenje maksimiziraju vijek trajanja baterije i smanjuju otpad.",
+      green_b: "b) Odvojeno prikupljanje otpadnih baterija", green_b_desc: "Ne odlažite litij-ionske baterije u kućni otpad.",
+      green_b_li1: "Na kraju radnog vijeka baterije, odložite je na za to predviđena mjesta za prikupljanje ili u ovlaštena postrojenja za recikliranje u skladu s lokalnim propisima.", green_b_li2: "Ako je dostupno, koristite sustave preuzimanja u trgovinama, općinama ili proizvođačima.",
+      green_c: "c) Prikupljanje, preuzimanje, ponovna uporaba, prenamjena i obrada", green_c_desc: "Otpadne litij-ionske baterije treba prikupljati odvojeno kako bi se omogućila priprema za ponovnu uporabu, recikliranje i oporaba materijala.",
+      green_c_li1: "Odvojeno prikupljanje pomaže u očuvanju vrijednih sirovina i smanjuje utjecaj na okoliš.", green_c_li2: "Usluge prikupljanja i obrade dostupne su putem ovlaštenih mjesta za prikupljanje i postrojenja za recikliranje.",
+      green_d: "d) Sigurnosne upute za rukovanje otpadnim baterijama", green_d_desc: "Pažljivo rukujte otpadnim baterijama kako biste spriječili kratki spoj, požar ili curenje.",
+      green_d_li1: "Ne drobite, bušite, rastavljajte, spaljujte niti izlažite otpadne baterije prekomjernoj toplini.", green_d_li2: "Ako je baterija oštećena, natečena, curi ili se pregrijava, odmah prekinite uporabu i odložite je u ovlašteno postrojenje za prikupljanje.", green_d_li3: "Kada je to moguće, prekrijte izložene terminale baterije izolacijskom trakom prije odlaganja.", green_d_li4: "Čuvajte otpadne baterije na hladnom, suhom mjestu, daleko od metalnih predmeta i zapaljivih materijala.",
+      green_e: "e) Značenje oznaka i simbola", green_e_li1: "<strong>Precrtana kanta za smeće:</strong> Označava da se baterija ne smije odlagati u kućni otpad i mora se odvojeno prikupiti za recikliranje.", green_e_li2: "<strong>CE oznaka:</strong> Označava da je proizvod u skladu s primjenjivim zakonodavstvom Europske unije i zahtjevima za ocjenu sukladnosti.",
+      green_f: "f) Utjecaj opasnih tvari na okoliš i zdravlje", green_f_desc: "Litij-ionske baterije sadrže tvari koje mogu predstavljati rizik za ljudsko zdravlje i okoliš ako se njima nepravilno rukuje.",
+      green_f_li1: "Nikada ne odlažite baterije u vatru, kućni otpad ili prirodni okoliš.", green_f_li2: "Pravilno prikupljanje i recikliranje pomažu u sprječavanju onečišćenja okoliša i omogućuju oporabu vrijednih materijala.",
+      yellow_title: "Sigurnosno upozorenje", yellow_li1: "Držite podalje od visokih temperatura.", yellow_li2: "Ne koristite ako je uronjena u vodu.", yellow_li3: "Ne otvarajte, ne drobite, ne bušite i ne spaljujte.", yellow_li4: "Prekinite s uporabom ako je baterija natečena ili oštećena.",
+      footer_text: "Shenzhen Da zheng Energy Co., LTD.<br>U skladu s Uredbom (EU) 2023/1542 (Uredba EU o baterijama)"
+    }
+  };
+
+  // 获取所有的语言按钮
+  const langBtns = document.querySelectorAll('.lang-btn');
+
+  // 给每个按钮绑定点击事件
+  langBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      langBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const selectedLang = this.getAttribute('data-lang');
+
+      if (translations[selectedLang]) {
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+          const key = element.getAttribute('data-i18n');
+          const translation = translations[selectedLang][key];
+          
+          if (translation) {
+            // 检查是否包含 HTML 标签（比如 <br> 或 <strong>），如果有则用 innerHTML
+            if (translation.includes('<br>') || translation.includes('<strong>')) {
+               element.innerHTML = translation;
+            } else {
+               element.innerText = translation;
+            }
+          }
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
