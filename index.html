@@ -82,7 +82,7 @@
   }
   .text-muted { color: #777; font-size: 14px; }
   .row { display: flex; margin-bottom: 8px; font-size: 14px; }
-  .col-label { width: 120px; color: #777; flex-sink: 0; }
+  .col-label { width: 120px; color: #777; flex-shrink: 0; }
   .col-value { color: #333; word-break: break-all; }
 
   /* ================= 顶部蓝色标题 ================= */
@@ -171,7 +171,7 @@
     display: inline-block; width: 0; height: 0;
     border-top: 5px solid transparent; border-bottom: 5px solid transparent;
     border-left: 6px solid currentColor; margin-right: 10px;
-    transition: transform 0.3s ease; flex-sink: 0;
+    transition: transform 0.3s ease; flex-shrink: 0;
   }
   details[open] .arrow-icon { transform: rotate(90deg); }
   .card-content { padding: 0 20px 15px 40px; font-size: 14px; cursor: text; }
@@ -220,7 +220,7 @@
     <button class="lang-btn" data-lang="da"><img src="https://flagcdn.com/dk.svg" alt="DA"> DA</button>
     <button class="lang-btn" data-lang="fi"><img src="https://flagcdn.com/fi.svg" alt="FI"> FI</button>
     <button class="lang-btn" data-lang="no"><img src="https://flagcdn.com/no.svg" alt="NO"> NO</button>
-    <button class="lang-btn" data-lang=""><img src="https://flagcdn.com/.svg" alt=""> </button>
+    <button class="lang-btn" data-lang="hr"><img src="https://flagcdn.com/hr.svg" alt="HR"> HR</button>
     <button class="lang-btn" data-lang="zh"><img src="https://flagcdn.com/cn.svg" alt="CN"> 中文</button>
   </div>
 
@@ -359,20 +359,20 @@
       <h4 data-i18n="green_b">b) Separate Collection of Waste Batteries</h4>
       <p data-i18n="green_b_desc">Do not dispose of lithium-ion batteries with household waste.</p>
       <ul>
-        <li data-i18n="green_b_li1">At the end of the battery's service life, dispose of it tough designated battery collection points or authorised recycling facilities in accordance with local regulations.</li>
+        <li data-i18n="green_b_li1">At the end of the battery's service life, dispose of it through designated battery collection points or authorised recycling facilities in accordance with local regulations.</li>
         <li data-i18n="green_b_li2">Where available, use retailer, municipal or producer take-back schemes for waste batteries.</li>
       </ul>
       <h4 data-i18n="green_c">c) Collection, Take-Back, Re-use, Repurposing and Treatment</h4>
       <p data-i18n="green_c_desc">Waste lithium-ion batteries should be collected separately to enable preparation for re-use, repurposing where appropriate, recycling and material recovery.</p>
       <ul>
         <li data-i18n="green_c_li1">Separate collection helps conserve valuable raw materials and reduces environmental impacts.</li>
-        <li data-i18n="green_c_li2">Collection and treatment services are available tough authorised collection points and recycling facilities.</li>
+        <li data-i18n="green_c_li2">Collection and treatment services are available through authorised collection points and recycling facilities.</li>
       </ul>
       <h4 data-i18n="green_d">d) Safety Instructions for Handling Waste Batteries</h4>
       <p data-i18n="green_d_desc">Handle waste batteries carefully to prevent short circuits, fire or leakage.</p>
       <ul>
         <li data-i18n="green_d_li1">Do not crush, puncture, dismantle, incinerate or expose waste batteries to excessive heat.</li>
-        <li data-i18n="green_d_li2">If the battery is damaged, swollen, leaking or overheating, discontinue use immediately and dispose of it tough an authorised collection facility.</li>
+        <li data-i18n="green_d_li2">If the battery is damaged, swollen, leaking or overheating, discontinue use immediately and dispose of it through an authorised collection facility.</li>
         <li data-i18n="green_d_li3">Where practical, cover exposed battery terminals with insulating tape before disposal.</li>
         <li data-i18n="green_d_li4">Store waste batteries in a cool, dry place away from metal objects and combustible materials until they are recycled.</li>
       </ul>
@@ -414,7 +414,7 @@
       This product complies with the requirements of the applicable European Union legislation. The Declaration of Conformity (DoC) can be viewed below; the PDF is available on the declaration page.
     </p>
     <!-- ⚠️ 请把 href="#" 里面的 # 换成你的真实文件链接 -->
-    <a href="design/assets/Neck fan EU declaration of conformity DoC.pdf" target="_blank" class="view-btn">
+    <a href="#" target="_blank" class="view-btn">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/>
       </svg>
