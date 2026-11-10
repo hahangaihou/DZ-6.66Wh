@@ -273,6 +273,7 @@
 
     <div class="substance-title" data-i18n="haz_contains_title">Contains the following hazardous substances</div>
     <div class="substance-grid">
+      <!-- 修改点：只保留两项 -->
       <div class="substance-item">
         <div class="substance-name" data-i18n="sub_lco">Lithium Cobalt Oxide</div>
         <div class="substance-formula">LiCoO<sub>2</sub></div>
@@ -280,14 +281,6 @@
       <div class="substance-item">
         <div class="substance-name" data-i18n="sub_lipf6">Lithium Hexafluorophosphate</div>
         <div class="substance-formula">LiPF<sub>6</sub></div>
-      </div>
-      <div class="substance-item">
-        <div class="substance-name" data-i18n="sub_ec">Ethylene Carbonate</div>
-        <div class="substance-formula">C<sub>3</sub>H<sub>4</sub>O<sub>3</sub></div>
-      </div>
-      <div class="substance-item">
-        <div class="substance-name" data-i18n="sub_dmc">Dimethyl Carbonate</div>
-        <div class="substance-formula">C<sub>3</sub>H<sub>6</sub>O<sub>3</sub></div>
       </div>
     </div>
   </div>
@@ -308,10 +301,13 @@
           <th style="text-align: left; padding-left: 15px;" data-i18n="chem_name">Chemical Name</th>
           <th data-i18n="chem_mass">Mass %</th>
         </tr>
+        <!-- 修改点：按截图更新表格数据 -->
         <tr><td style="text-align: left; padding-left: 15px;" data-i18n="chem_al">Aluminium</td><td>5-10%</td></tr>
         <tr><td style="text-align: left; padding-left: 15px;" data-i18n="chem_cu">Copper</td><td>7-13%</td></tr>
+        <tr><td style="text-align: left; padding-left: 15px;" data-i18n="chem_li">Lithium</td><td>1.5-4.2%</td></tr>
         <tr><td style="text-align: left; padding-left: 15px;" data-i18n="chem_gra">Graphite</td><td>10-30%</td></tr>
-        <tr><td style="text-align: left; padding-left: 15px;" data-i18n="chem_co">Cobalt</td><td>15-40%</td></tr>
+        <tr><td style="text-align: left; padding-left: 15px;" data-i18n="chem_ni">Nickel</td><td>1-5%</td></tr>
+        <tr><td style="text-align: left; padding-left: 15px;" data-i18n="chem_co">Cobalt</td><td>9.0-24.1%</td></tr>
       </table>
     </div>
   </div>
@@ -428,9 +424,9 @@
       spec_title: "Specifications", lbl_weight: "Weight", lbl_size: "Size (mm) L*W", lbl_voltage: "Voltage", lbl_capacity: "Capacity", lbl_chem: "Chemistry", val_chem: "Li-ion LCO",
       hazard_title: "Hazardous Substances", val_nd: "Not Detected", tbl_lead: "Lead", tbl_cad: "Cadmium", tbl_mer: "Mercury",
       haz_contains_title: "Contains the following hazardous substances",
-      sub_lco: "Lithium Cobalt Oxide", sub_lipf6: "Lithium Hexafluorophosphate", sub_ec: "Ethylene Carbonate", sub_dmc: "Dimethyl Carbonate",
+      sub_lco: "Lithium Cobalt Oxide", sub_lipf6: "Lithium Hexafluorophosphate",
       ext_title: "Extinguishing Agents", ext_water: "Water", ext_sand: "Dry Sand",
-      chem_title: "Chemical Composition (Critical Raw Materials >0.1%)", chem_name: "Chemical Name", chem_mass: "Mass %", chem_li: "Lithium", chem_fe: "Fe", chem_gra: "Graphite", chem_al: "Aluminium", chem_cu: "Copper", chem_co: "Cobalt",
+      chem_title: "Chemical Composition (Critical Raw Materials >0.1%)", chem_name: "Chemical Name", chem_mass: "Mass %", chem_li: "Lithium", chem_fe: "Fe", chem_gra: "Graphite", chem_al: "Aluminium", chem_cu: "Copper", chem_ni: "Nickel", chem_co: "Cobalt",
       green_title: "Information Regarding Prevention and Management of Waste Lithium-Ion Batteries",
       green_a: "a) Waste Prevention", green_a_desc: "To help prevent battery waste and extend battery service life:",
       green_a_li1: "Charge and use the battery only as described in this manual.", green_a_li2: "Store the product in a cool, dry place away from direct sunlight, excessive heat, moisture and corrosive environments.", green_a_li3: "Avoid dropping, crushing, puncturing, dismantling, modifying or exposing the battery to excessive mechanical shock.", green_a_li4: "Do not expose the battery to fire or temperatures exceeding the specified operating or storage limits.", green_a_li5: "Proper use, charging and storage will help maximise battery life and reduce waste.",
@@ -461,9 +457,9 @@
       spec_title: "规格参数", lbl_weight: "重量", lbl_size: "尺寸 (mm) 长*宽", lbl_voltage: "电压", lbl_capacity: "容量", lbl_chem: "化学成分", val_chem: "Li-ion LCO",
       hazard_title: "有害物质", val_nd: "未检出", tbl_lead: "铅", tbl_cad: "镉", tbl_mer: "汞",
       haz_contains_title: "包含以下有害物质",
-      sub_lco: "钴酸锂", sub_lipf6: "六氟磷酸锂", sub_ec: "碳酸乙烯酯", sub_dmc: "碳酸二甲酯",
+      sub_lco: "钴酸锂", sub_lipf6: "六氟磷酸锂",
       ext_title: "灭火剂", ext_water: "水", ext_sand: "干砂",
-      chem_title: "化学成分 (关键原材料 >0.1%)", chem_name: "化学品名称", chem_mass: "质量分数 (%)", chem_li: "锂", chem_fe: "铁", chem_gra: "石墨", chem_al: "铝", chem_cu: "铜", chem_co: "钴",
+      chem_title: "化学成分 (关键原材料 >0.1%)", chem_name: "化学品名称", chem_mass: "质量占比", chem_li: "锂", chem_fe: "铁", chem_gra: "石墨", chem_al: "铝", chem_cu: "铜", chem_ni: "镍（电池级）", chem_co: "钴",
       green_title: "废弃锂离子电池的预防与管理信息",
       green_a: "a) 废物预防", green_a_desc: "为了帮助防止电池浪费并延长电池使用寿命：",
       green_a_li1: "仅按照本手册所述充电和使用电池。", green_a_li2: "将产品存放在阴凉、干燥的地方，远离阳光直射、过热、潮湿和腐蚀性环境。", green_a_li3: "避免跌落、挤压、刺穿、拆卸、改装或将电池暴露在过度的机械冲击下。", green_a_li4: "不要将电池暴露在火中或超过指定操作或存储限制的温度下。", green_a_li5: "正确的使用、充电和存放有助于最大化电池寿命并减少浪费。",
@@ -494,9 +490,9 @@
       spec_title: "Spezifikationen", lbl_weight: "Gewicht", lbl_size: "Größe (mm) L*B", lbl_voltage: "Spannung", lbl_capacity: "Kapazität", lbl_chem: "Chemie", val_chem: "Li-ion LCO",
       hazard_title: "Gefahrstoffe", val_nd: "Nicht nachgewiesen", tbl_lead: "Blei", tbl_cad: "Cadmium", tbl_mer: "Quecksilber",
       haz_contains_title: "Enthält die folgenden Gefahrstoffe",
-      sub_lco: "Lithiumcobaltoxid", sub_lipf6: "Lithiumhexafluorophosphat", sub_ec: "Ethylencarbonat", sub_dmc: "Dimethylcarbonat",
+      sub_lco: "Lithiumcobaltoxid", sub_lipf6: "Lithiumhexafluorophosphat",
       ext_title: "Löschmittel", ext_water: "Wasser", ext_sand: "Trockener Sand",
-      chem_title: "Chemische Zusammensetzung (Kritische Rohstoffe >0,1%)", chem_name: "Chemischer Name", chem_mass: "Massen-%", chem_li: "Lithium", chem_fe: "Fe", chem_gra: "Graphit", chem_al: "Aluminium", chem_cu: "Kupfer", chem_co: "Kobalt",
+      chem_title: "Chemische Zusammensetzung (Kritische Rohstoffe >0,1%)", chem_name: "Chemischer Name", chem_mass: "Massen-%", chem_li: "Lithium", chem_fe: "Fe", chem_gra: "Graphit", chem_al: "Aluminium", chem_cu: "Kupfer", chem_ni: "Nickel", chem_co: "Kobalt",
       green_title: "Informationen zur Vermeidung und Bewirtschaftung von Alt-Lithium-Ionen-Akkus",
       green_a: "a) Abfallvermeidung", green_a_desc: "Um Akkuabfälle zu vermeiden und die Lebensdauer zu verlängern:",
       green_a_li1: "Laden und verwenden Sie den Akku nur wie in dieser Anleitung beschrieben.", green_a_li2: "Lagern Sie das Produkt an einem kühlen, trockenen Ort, geschützt vor direkter Sonneneinstrahlung, übermäßiger Hitze, Feuchtigkeit und korrosiven Umgebungen.", green_a_li3: "Vermeiden Sie Herunterfallen, Quetschen, Durchstechen, Zerlegen, Modifizieren oder starke mechanische Stöße.", green_a_li4: "Setzen Sie den Akku keinem Feuer oder Temperaturen aus, die die angegebenen Grenzen überschreiten.", green_a_li5: "Richtige Verwendung, Ladung und Lagerung maximieren die Lebensdauer und reduzieren Abfall.",
@@ -527,9 +523,9 @@
       spec_title: "Spécifications", lbl_weight: "Poids", lbl_size: "Taille (mm) L*L", lbl_voltage: "Tension", lbl_capacity: "Capacité", lbl_chem: "Chimie", val_chem: "Li-ion LCO",
       hazard_title: "Substances dangereuses", val_nd: "Non détecté", tbl_lead: "Plomb", tbl_cad: "Cadmium", tbl_mer: "Mercure",
       haz_contains_title: "Contient les substances dangereuses suivantes",
-      sub_lco: "Oxyde de lithium-cobalt", sub_lipf6: "Hexafluorophosphate de lithium", sub_ec: "Carbonate d'éthylène", sub_dmc: "Carbonate de diméthyle",
+      sub_lco: "Oxyde de lithium-cobalt", sub_lipf6: "Hexafluorophosphate de lithium",
       ext_title: "Agents extincteurs", ext_water: "Eau", ext_sand: "Sable sec",
-      chem_title: "Composition chimique (Matières premières critiques >0,1%)", chem_name: "Nom chimique", chem_mass: "Masse %", chem_li: "Lithium", chem_fe: "Fe", chem_gra: "Graphite", chem_al: "Aluminium", chem_cu: "Cuivre", chem_co: "Cobalt",
+      chem_title: "Composition chimique (Matières premières critiques >0,1%)", chem_name: "Nom chimique", chem_mass: "Masse %", chem_li: "Lithium", chem_fe: "Fe", chem_gra: "Graphite", chem_al: "Aluminium", chem_cu: "Cuivre", chem_ni: "Nickel", chem_co: "Cobalt",
       green_title: "Informations sur la prévention et la gestion des batteries lithium-ion usagées",
       green_a: "a) Prévention des déchets", green_a_desc: "Pour éviter le gaspillage et prolonger la durée de vie :",
       green_a_li1: "Chargez et utilisez la batterie uniquement comme décrit dans ce manuel.", green_a_li2: "Conservez le produit dans un endroit frais et sec, à l'abri de la lumière directe du soleil, de la chaleur excessive, de l'humidité et des environnements corrosifs.", green_a_li3: "Évitez de faire tomber, d'écraser, de percer, de démonter, de modifier ou de soumettre la batterie à des chocs mécaniques excessifs.", green_a_li4: "N'exposez pas la batterie au feu ou à des températures dépassant les limites spécifiées.", green_a_li5: "Une utilisation, une charge et un stockage appropriés maximisent la durée de vie et réduisent les déchets.",
@@ -560,9 +556,9 @@
       spec_title: "Especificaciones", lbl_weight: "Peso", lbl_size: "Tamaño (mm) L*An", lbl_voltage: "Voltaje", lbl_capacity: "Capacidad", lbl_chem: "Química", val_chem: "Li-ion LCO",
       hazard_title: "Sustancias peligrosas", val_nd: "No detectado", tbl_lead: "Plomo", tbl_cad: "Cadmio", tbl_mer: "Mercurio",
       haz_contains_title: "Contiene las siguientes sustancias peligrosas",
-      sub_lco: "Óxido de litio y cobalto", sub_lipf6: "Hexafluorofosfato de litio", sub_ec: "Carbonato de etileno", sub_dmc: "Carbonato de dimetilo",
+      sub_lco: "Óxido de litio y cobalto", sub_lipf6: "Hexafluorofosfato de litio",
       ext_title: "Agentes extintores", ext_water: "Agua", ext_sand: "Arena seca",
-      chem_title: "Composición química (Materias primas críticas >0,1%)", chem_name: "Nombre químico", chem_mass: "Masa %", chem_li: "Litio", chem_fe: "Fe", chem_gra: "Grafito", chem_al: "Aluminio", chem_cu: "Cobre", chem_co: "Cobalto",
+      chem_title: "Composición química (Materias primas críticas >0,1%)", chem_name: "Nombre químico", chem_mass: "Masa %", chem_li: "Litio", chem_fe: "Fe", chem_gra: "Grafito", chem_al: "Aluminio", chem_cu: "Cobre", chem_ni: "Níquel", chem_co: "Cobalto",
       green_title: "Información sobre la prevención y gestión de baterías de iones de litio usadas",
       green_a: "a) Prevención de residuos", green_a_desc: "Para ayudar a prevenir el desperdicio y prolongar la vida útil:",
       green_a_li1: "Cargue y use la batería solo como se describe en este manual.", green_a_li2: "Almacene el producto en un lugar fresco y seco, lejos de la luz solar directa, calor excesivo, humedad y ambientes corrosivos.", green_a_li3: "Evite caídas, aplastamientos, perforaciones, desmontajes, modificaciones o exposición a impactos mecánicos excesivos.", green_a_li4: "No exponga la batería al fuego ni a temperaturas que superen los límites especificados.", green_a_li5: "El uso, la carga y el almacenamiento adecuados maximizan la vida útil y reducen los residuos.",
@@ -593,9 +589,9 @@
       spec_title: "Specifiche", lbl_weight: "Peso", lbl_size: "Dimensioni (mm) L*L", lbl_voltage: "Tensione", lbl_capacity: "Capacità", lbl_chem: "Chimica", val_chem: "Li-ion LCO",
       hazard_title: "Sostanze pericolose", val_nd: "Non rilevato", tbl_lead: "Piombo", tbl_cad: "Cadmio", tbl_mer: "Mercurio",
       haz_contains_title: "Contiene le seguenti sostanze pericolose",
-      sub_lco: "Ossido di litio e cobalto", sub_lipf6: "Esafluorofosfato di litio", sub_ec: "Carbonato di etilene", sub_dmc: "Dimetil carbonato",
+      sub_lco: "Ossido di litio e cobalto", sub_lipf6: "Esafluorofosfato di litio",
       ext_title: "Agenti estinguenti", ext_water: "Acqua", ext_sand: "Sabbia asciutta",
-      chem_title: "Composizione chimica (Materie prime critiche >0,1%)", chem_name: "Nome chimico", chem_mass: "Massa %", chem_li: "Litio", chem_fe: "Fe", chem_gra: "Grafite", chem_al: "Alluminio", chem_cu: "Rame", chem_co: "Cobalto",
+      chem_title: "Composizione chimica (Materie prime critiche >0,1%)", chem_name: "Nome chimico", chem_mass: "Massa %", chem_li: "Litio", chem_fe: "Fe", chem_gra: "Grafite", chem_al: "Alluminio", chem_cu: "Rame", chem_ni: "Nichel", chem_co: "Cobalto",
       green_title: "Informazioni sulla prevenzione e gestione delle batterie agli ioni di litio usate",
       green_a: "a) Prevenzione dei rifiuti", green_a_desc: "Per prevenire gli sprechi e prolungare la durata:",
       green_a_li1: "Caricare e utilizzare la batteria solo come descritto in questo manuale.", green_a_li2: "Conservare il prodotto in un luogo fresco e asciutto, lontano dalla luce solare diretta, calore eccessivo, umidità e ambienti corrosivi.", green_a_li3: "Evitare cadute, schiacciamenti, perforazioni, smontaggi, modifiche o urti meccanici eccessivi.", green_a_li4: "Non esporre la batteria al fuoco o a temperature superiori ai limiti specificati.", green_a_li5: "Un uso, una ricarica e uno stoccaggio adeguati massimizzano la durata e riducono i rifiuti.",
@@ -626,9 +622,9 @@
       spec_title: "Specificaties", lbl_weight: "Gewicht", lbl_size: "Afmeting (mm) L*B", lbl_voltage: "Spanning", lbl_capacity: "Capaciteit", lbl_chem: "Chemie", val_chem: "Li-ion LCO",
       hazard_title: "Gevaarlijke stoffen", val_nd: "Niet gedetecteerd", tbl_lead: "Lood", tbl_cad: "Cadmium", tbl_mer: "Kwik",
       haz_contains_title: "Bevat de volgende gevaarlijke stoffen",
-      sub_lco: "Lithiumkobaltoxide", sub_lipf6: "Lithiumhexafluorofosfaat", sub_ec: "Ethyleencarbonaat", sub_dmc: "Dimethylcarbonaat",
+      sub_lco: "Lithiumkobaltoxide", sub_lipf6: "Lithiumhexafluorofosfaat",
       ext_title: "Blusmiddelen", ext_water: "Water", ext_sand: "Droog zand",
-      chem_title: "Chemische samenstelling (Kritieke grondstoffen >0,1%)", chem_name: "Chemische naam", chem_mass: "Massa %", chem_li: "Lithium", chem_fe: "Fe", chem_gra: "Grafiet", chem_al: "Aluminium", chem_cu: "Koper", chem_co: "Kobalt",
+      chem_title: "Chemische samenstelling (Kritieke grondstoffen >0,1%)", chem_name: "Chemische naam", chem_mass: "Massa %", chem_li: "Lithium", chem_fe: "Fe", chem_gra: "Grafiet", chem_al: "Aluminium", chem_cu: "Koper", chem_ni: "Nikkel", chem_co: "Kobalt",
       green_title: "Informatie over preventie en beheer van afgedankte lithium-ionbatterijen",
       green_a: "a) Afvalpreventie", green_a_desc: "Om batterijafval te voorkomen en de levensduur te verlengen:",
       green_a_li1: "Laad en gebruik de batterij alleen zoals beschreven in deze handleiding.", green_a_li2: "Bewaar het product op een koele, droge plaats, uit de buurt van direct zonlicht, overmatige hitte, vocht en corrosieve omgevingen.", green_a_li3: "Voorkom vallen, pletten, doorboren, demonteren, wijzigen of blootstelling aan overmatige mechanische schokken.", green_a_li4: "Stel de batterij niet bloot aan vuur of temperaturen boven de gespecificeerde limieten.", green_a_li5: "Correct gebruik, opladen en opslag maximaliseren de levensduur en verminderen afval.",
@@ -659,9 +655,9 @@
       spec_title: "Especificações", lbl_weight: "Peso", lbl_size: "Tamanho (mm) C*L", lbl_voltage: "Voltagem", lbl_capacity: "Capacidade", lbl_chem: "Química", val_chem: "Li-ion LCO",
       hazard_title: "Substâncias Perigosas", val_nd: "Não detectado", tbl_lead: "Chumbo", tbl_cad: "Cádmio", tbl_mer: "Mercúrio",
       haz_contains_title: "Contém as seguintes substâncias perigosas",
-      sub_lco: "Óxido de lítio e cobalto", sub_lipf6: "Hexafluorofosfato de lítio", sub_ec: "Carbonato de etileno", sub_dmc: "Carbonato de dimetila",
+      sub_lco: "Óxido de lítio e cobalto", sub_lipf6: "Hexafluorofosfato de lítio",
       ext_title: "Agentes Extintores", ext_water: "Água", ext_sand: "Areia Seca",
-      chem_title: "Composição Química (Matérias-primas críticas >0,1%)", chem_name: "Nome Químico", chem_mass: "Massa %", chem_li: "Lítio", chem_fe: "Fe", chem_gra: "Grafite", chem_al: "Alumínio", chem_cu: "Cobre", chem_co: "Cobalto",
+      chem_title: "Composição Química (Matérias-primas críticas >0,1%)", chem_name: "Nome Químico", chem_mass: "Massa %", chem_li: "Lítio", chem_fe: "Fe", chem_gra: "Grafite", chem_al: "Alumínio", chem_cu: "Cobre", chem_ni: "Níquel", chem_co: "Cobalto",
       green_title: "Informações sobre Prevenção e Gestão de Baterias de Íons de Lítio Usadas",
       green_a: "a) Prevenção de Resíduos", green_a_desc: "Para ajudar a prevenir o desperdício e prolongar a vida útil:",
       green_a_li1: "Carregue e use a bateria apenas conforme descrito neste manual.", green_a_li2: "Armazene o produto em local fresco e seco, longe da luz solar direta, calor excessivo, umidade e ambientes corrosivos.", green_a_li3: "Evite quedas, esmagamentos, perfurações, desmontagem, modificação ou exposição a choques mecânicos excessivos.", green_a_li4: "Não exponha a bateria ao fogo ou a temperaturas que excedam os limites especificados.", green_a_li5: "O uso, carregamento e armazenamento adequados maximizam a vida útil e reduzem o desperdício.",
@@ -692,9 +688,9 @@
       spec_title: "Specyfikacje", lbl_weight: "Waga", lbl_size: "Rozmiar (mm) Dł*Szer", lbl_voltage: "Napięcie", lbl_capacity: "Pojemność", lbl_chem: "Chemia", val_chem: "Li-ion LCO",
       hazard_title: "Substancje niebezpieczne", val_nd: "Nie wykryto", tbl_lead: "Ołów", tbl_cad: "Kadm", tbl_mer: "Rtęć",
       haz_contains_title: "Zawiera następujące substancje niebezpieczne",
-      sub_lco: "Tlenek litowo-kobaltowy", sub_lipf6: "Heksafluorofosforan litu", sub_ec: "Węglan etylenu", sub_dmc: "Węglan dimetylu",
+      sub_lco: "Tlenek litowo-kobaltowy", sub_lipf6: "Heksafluorofosforan litu",
       ext_title: "Środki gaśnicze", ext_water: "Woda", ext_sand: "Suchy piasek",
-      chem_title: "Skład chemiczny (Surowce krytyczne >0,1%)", chem_name: "Nazwa chemiczna", chem_mass: "Udział masowy %", chem_li: "Lit", chem_fe: "Fe", chem_gra: "Grafit", chem_al: "Aluminium", chem_cu: "Miedź", chem_co: "Kobalt",
+      chem_title: "Skład chemiczny (Surowce krytyczne >0,1%)", chem_name: "Nazwa chemiczna", chem_mass: "Udział masowy %", chem_li: "Lit", chem_fe: "Fe", chem_gra: "Grafit", chem_al: "Aluminium", chem_cu: "Miedź", chem_ni: "Nikiel", chem_co: "Kobalt",
       green_title: "Informacje dotyczące zapobiegania i gospodarowania zużytymi akumulatorami litowo-jonowymi",
       green_a: "a) Zapobieganie odpadom", green_a_desc: "Aby zapobiec marnowaniu baterii i wydłużyć jej żywotność:",
       green_a_li1: "Ładuj i używaj baterii tylko zgodnie z opisem w tej instrukcji.", green_a_li2: "Przechowuj produkt w chłodnym, suchym miejscu, z dala od bezpośredniego światła słonecznego, nadmiernego ciepła, wilgoci i środowisk korozyjnych.", green_a_li3: "Unikaj upuszczania, zgniatania, przekłuwania, demontażu, modyfikowania lub narażania baterii na nadmierne wstrząsy mechaniczne.", green_a_li4: "Nie wystawiaj baterii na działanie ognia ani temperatur przekraczających określone limity.", green_a_li5: "Prawidłowe użytkowanie, ładowanie i przechowywanie maksymalizuje żywotność i zmniejsza ilość odpadów.",
@@ -725,9 +721,9 @@
       spec_title: "Specifikationer", lbl_weight: "Vikt", lbl_size: "Storlek (mm) L*B", lbl_voltage: "Spänning", lbl_capacity: "Kapacitet", lbl_chem: "Kemi", val_chem: "Li-ion LCO",
       hazard_title: "Farliga ämnen", val_nd: "Ej detekterad", tbl_lead: "Bly", tbl_cad: "Kadmium", tbl_mer: "Kvicksilver",
       haz_contains_title: "Innehåller följande farliga ämnen",
-      sub_lco: "Litiumkoboltoxid", sub_lipf6: "Litiumhexafluorfosfat", sub_ec: "Etenkarbonat", sub_dmc: "Dimetylkarbonat",
+      sub_lco: "Litiumkoboltoxid", sub_lipf6: "Litiumhexafluorfosfat",
       ext_title: "Släckmedel", ext_water: "Vatten", ext_sand: "Torr sand",
-      chem_title: "Kemisk sammansättning (Kritiska råmaterial >0,1%)", chem_name: "Kemiskt namn", chem_mass: "Massa %", chem_li: "Litium", chem_fe: "Fe", chem_gra: "Grafit", chem_al: "Aluminium", chem_cu: "Koppar", chem_co: "Kobolt",
+      chem_title: "Kemisk sammansättning (Kritiska råmaterial >0,1%)", chem_name: "Kemiskt namn", chem_mass: "Massa %", chem_li: "Litium", chem_fe: "Fe", chem_gra: "Grafit", chem_al: "Aluminium", chem_cu: "Koppar", chem_ni: "Nickel", chem_co: "Kobolt",
       green_title: "Information om förebyggande och hantering av förbrukade litiumjonbatterier",
       green_a: "a) Förebyggande av avfall", green_a_desc: "För att förhindra batteriavfall och förlänga livslängden:",
       green_a_li1: "Ladda och använd batteriet endast enligt beskrivningen i denna manual.", green_a_li2: "Förvara produkten på en sval, torr plats borta från direkt solljus, överdriven värme, fukt och korrosiva miljöer.", green_a_li3: "Undvik att tappa, krossa, punktera, demontera, modifiera eller utsätta batteriet för överdriven mekanisk stöt.", green_a_li4: "Utsätt inte batteriet för eld eller temperaturer som överskrider angivna gränser.", green_a_li5: "Korrekt användning, laddning och förvaring maximerar livslängden och minskar avfallet.",
@@ -758,9 +754,9 @@
       spec_title: "Specifikationer", lbl_weight: "Vægt", lbl_size: "Størrelse (mm) L*B", lbl_voltage: "Spænding", lbl_capacity: "Kapacitet", lbl_chem: "Kemi", val_chem: "Li-ion LCO",
       hazard_title: "Farlige stoffer", val_nd: "Ikke påvist", tbl_lead: "Bly", tbl_cad: "Cadmium", tbl_mer: "Kviksølv",
       haz_contains_title: "Indeholder følgende farlige stoffer",
-      sub_lco: "Lithiumcobaltoxid", sub_lipf6: "Lithiumhexafluorophosphat", sub_ec: "Ethylencarbonat", sub_dmc: "Dimethylcarbonat",
+      sub_lco: "Lithiumcobaltoxid", sub_lipf6: "Lithiumhexafluorophosphat",
       ext_title: "Slukningsmidler", ext_water: "Vand", ext_sand: "Tørt sand",
-      chem_title: "Kemisk sammensætning (Kritiske råmaterialer >0,1%)", chem_name: "Kemisk navn", chem_mass: "Masse %", chem_li: "Lithium", chem_fe: "Fe", chem_gra: "Grafit", chem_al: "Aluminium", chem_cu: "Kobber", chem_co: "Kobolt",
+      chem_title: "Kemisk sammensætning (Kritiske råmaterialer >0,1%)", chem_name: "Kemisk navn", chem_mass: "Masse %", chem_li: "Lithium", chem_fe: "Fe", chem_gra: "Grafit", chem_al: "Aluminium", chem_cu: "Kobber", chem_ni: "Nikkel", chem_co: "Kobolt",
       green_title: "Oplysninger om forebyggelse og håndtering af affald af lithium-ion batterier",
       green_a: "a) Affaldsforebyggelse", green_a_desc: "For at hjælpe med at forhindre batteriaffald og forlænge levetiden:",
       green_a_li1: "Oplad og brug kun batteriet som beskrevet i denne manual.", green_a_li2: "Opbevar produktet på et køligt, tørt sted væk fra direkte sollys, overdreven varme, fugt og ætsende miljøer.", green_a_li3: "Undgå at tabe, knuse, punktere, adskille, ændre eller udsætte batteriet for overdrevne mekaniske stød.", green_a_li4: "Udsæt ikke batteriet for ild eller temperaturer, der overstiger de specificerede grænser.", green_a_li5: "Korrekt brug, opladning og opbevaring maksimerer batteriets levetid og reducerer affald.",
@@ -791,9 +787,9 @@
       spec_title: "Tekniset tiedot", lbl_weight: "Paino", lbl_size: "Koko (mm) P*L", lbl_voltage: "Jännite", lbl_capacity: "Kapasiteetti", lbl_chem: "Kemia", val_chem: "Li-ion LCO",
       hazard_title: "Vaaralliset aineet", val_nd: "Ei havaittu", tbl_lead: "Lyijy", tbl_cad: "Kadmium", tbl_mer: "Elohopea",
       haz_contains_title: "Sisältää seuraavia vaarallisia aineita",
-      sub_lco: "Litiumkobolttioksidi", sub_lipf6: "Litiumheksafluorofosfaatti", sub_ec: "Eteenikarbonaatti", sub_dmc: "Dimetyylikarbonaatti",
+      sub_lco: "Litiumkobolttioksidi", sub_lipf6: "Litiumheksafluorofosfaatti",
       ext_title: "Sammutusaineet", ext_water: "Vesi", ext_sand: "Kuiva hiekka",
-      chem_title: "Kemiallinen koostumus (Kriittiset raaka-aineet >0,1%)", chem_name: "Kemiallinen nimi", chem_mass: "Massa %", chem_li: "Litium", chem_fe: "Fe", chem_gra: "Grafiitti", chem_al: "Alumiini", chem_cu: "Kupari", chem_co: "Koboltti",
+      chem_title: "Kemiallinen koostumus (Kriittiset raaka-aineet >0,1%)", chem_name: "Kemiallinen nimi", chem_mass: "Massa %", chem_li: "Litium", chem_fe: "Fe", chem_gra: "Grafiitti", chem_al: "Alumiini", chem_cu: "Kupari", chem_ni: "Nikkeli", chem_co: "Koboltti",
       green_title: "Tietoja käytettyjen litiumioniakkujen ehkäisystä ja hallinnasta",
       green_a: "a) Jätteen ehkäisy", green_a_desc: "Akkujätteen estämiseksi ja käyttöiän pidentämiseksi:",
       green_a_li1: "Lataa ja käytä akkua vain tässä käsikirjassa kuvatulla tavalla.", green_a_li2: "Säilytä tuotetta viileässä, kuivassa paikassa poissa suoralta auringonvalolta, liialliselta kuumuudelta, kosteudelta ja syövyttäviltä ympäristöiltä.", green_a_li3: "Vältä akun pudottamista, murskaamista, lävistämistä, purkamista, muuttamista tai altistamista liialliselle mekaaniselle iskulle.", green_a_li4: "Älä altista akkua tulelle tai lämpötiloille, jotka ylittävät määritetyt rajat.", green_a_li5: "Oikea käyttö, lataus ja säilytys maksimoivat akun käyttöiän ja vähentävät jätettä.",
@@ -824,9 +820,9 @@
       spec_title: "Spesifikasjoner", lbl_weight: "Vekt", lbl_size: "Størrelse (mm) L*B", lbl_voltage: "Spenning", lbl_capacity: "Kapasitet", lbl_chem: "Kjemi", val_chem: "Li-ion LCO",
       hazard_title: "Farlige stoffer", val_nd: "Ikke påvist", tbl_lead: "Bly", tbl_cad: "Kadmium", tbl_mer: "Kvikksølv",
       haz_contains_title: "Inneholder følgende farlige stoffer",
-      sub_lco: "Litiumkobolttoksid", sub_lipf6: "Litiumheksafluorofosfat", sub_ec: "Etylenkarbonat", sub_dmc: "Dimetylkarbonat",
+      sub_lco: "Litiumkobolttoksid", sub_lipf6: "Litiumheksafluorofosfat",
       ext_title: "Slukkemidler", ext_water: "Vann", ext_sand: "Tørr sand",
-      chem_title: "Kjemisk sammensetning (Kritiske råmaterialer >0,1%)", chem_name: "Kjemisk navn", chem_mass: "Masse %", chem_li: "Litium", chem_fe: "Fe", chem_gra: "Grafitt", chem_al: "Aluminium", chem_cu: "Kobber", chem_co: "Kobolt",
+      chem_title: "Kjemisk sammensetning (Kritiske råmaterialer >0,1%)", chem_name: "Kjemisk navn", chem_mass: "Masse %", chem_li: "Litium", chem_fe: "Fe", chem_gra: "Grafitt", chem_al: "Aluminium", chem_cu: "Kobber", chem_ni: "Nikkel", chem_co: "Kobolt",
       green_title: "Informasjon om forebygging og håndtering av avfall av litium-ion-batterier",
       green_a: "a) Avfallsforebygging", green_a_desc: "For å bidra til å forhindre batteriavfall og forlenge levetiden:",
       green_a_li1: "Lad og bruk batteriet kun som beskrevet i denne håndboken.", green_a_li2: "Oppbevar produktet på et kjølig, tørt sted borte fra direkte sollys, overdreven varme, fuktighet og korrosive miljøer.", green_a_li3: "Unngå å miste, knuse, punktere, demontere, modifisere eller utsette batteriet for overdreven mekanisk støt.", green_a_li4: "Ikke utsett batteriet for brann eller temperaturer som overstiger spesifiserte grenser.", green_a_li5: "Riktig bruk, lading og lagring maksimerer batterilevetiden og reduserer avfall.",
@@ -857,9 +853,9 @@
       spec_title: "Specifikacije", lbl_weight: "Težina", lbl_size: "Veličina (mm) D*Š", lbl_voltage: "Napon", lbl_capacity: "Kapacitet", lbl_chem: "Kemija", val_chem: "Li-ion LCO",
       hazard_title: "Opasne tvari", val_nd: "Nije otkriveno", tbl_lead: "Olovo", tbl_cad: "Kadmij", tbl_mer: "Živa",
       haz_contains_title: "Sadrži sljedeće opasne tvari",
-      sub_lco: "Litijev kobaltov oksid", sub_lipf6: "Litijev heksafluorofosfat", sub_ec: "Etilen karbonat", sub_dmc: "Dimetil karbonat",
+      sub_lco: "Litijev kobaltov oksid", sub_lipf6: "Litijev heksafluorofosfat",
       ext_title: "Sredstva za gašenje", ext_water: "Voda", ext_sand: "Suhi pijesak",
-      chem_title: "Kemijski sastav (Kritične sirovine >0,1%)", chem_name: "Kemijski naziv", chem_mass: "Maseni %", chem_li: "Litij", chem_fe: "Fe", chem_gra: "Grafit", chem_al: "Aluminij", chem_cu: "Bakar", chem_co: "Kobalt",
+      chem_title: "Kemijski sastav (Kritične sirovine >0,1%)", chem_name: "Kemijski naziv", chem_mass: "Maseni %", chem_li: "Litij", chem_fe: "Fe", chem_gra: "Grafit", chem_al: "Aluminij", chem_cu: "Bakar", chem_ni: "Nikal", chem_co: "Kobalt",
       green_title: "Informacije o sprječavanju i gospodarenju otpadnim litij-ionskim baterijama",
       green_a: "a) Sprječavanje nastanka otpada", green_a_desc: "Kako biste spriječili otpad od baterija i produžili vijek trajanja:",
       green_a_li1: "Bateriju punite i koristite samo na način opisan u ovom priručniku.", green_a_li2: "Proizvod čuvajte na hladnom, suhom mjestu, daleko od izravne sunčeve svjetlosti, prekomjerne topline, vlage i korozivnih okruženja.", green_a_li3: "Izbjegavajte ispuštanje, drobljenje, bušenje, rastavljanje, modificiranje ili izlaganje baterije prekomjernim mehaničkim udarcima.", green_a_li4: "Ne izlažite bateriju vatri ili temperaturama koje premašuju navedena ograničenja.", green_a_li5: "Pravilna uporaba, punjenje i skladištenje maksimiziraju vijek trajanja baterije i smanjuju otpad.",
